@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jeanné — Workout</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-gold-50: #FDF8F0;
+      --color-gold-100: #F9EDDA;
+      --color-gold-200: #F0D9B0;
+      --color-gold-300: #E5C080;
+      --color-gold-400: #D4A053;
+      --color-gold-500: #C48B38;
+      --color-gold-600: #A8722B;
+      --color-gold-700: #8A5C22;
+      --color-purple-50: #F5F2FC;
+      --color-purple-100: #E8E0F7;
+      --color-purple-200: #D1C0EF;
+      --color-purple-300: #B59FE3;
+      --color-purple-400: #9B7FD4;
+      --color-purple-500: #8266C4;
+      --color-purple-600: #6A4FAD;
+      --color-purple-700: #543D8C;
+      --color-blue-50: #F0F4FC;
+      --color-blue-100: #DCE6F7;
+      --color-blue-200: #B8CCEF;
+      --color-blue-300: #8DADE3;
+      --color-blue-400: #5B8FD4;
+      --color-blue-500: #4175C0;
+      --color-blue-600: #335EA0;
+      --color-blue-700: #284A80;
+      --color-bg: #F8F7F4;
+      --color-surface: #FFFFFF;
+      --color-border: #E8E5DF;
+      --color-text-primary: #1A1A1A;
+      --color-text-secondary: #6B6B6B;
+      --color-text-muted: #9B9B9B;
+      --color-success: #34D399;
+      --color-warning: #FBBF24;
+      --color-danger: #F87171;
+    }
+  </style>
+</head>
+<body class="bg-bg font-[Inter] antialiased">
+  <div class="max-w-[375px] mx-auto min-h-screen bg-bg relative">
+    <div class="page-content safe-bottom">
+
+      <!-- Status bar spacer -->
+      <div class="h-11"></div>
+
+      <!-- Workout Header -->
+      <div class="px-5 pb-4">
+        <h1 class="text-xl font-bold text-text-primary mb-3">Today's Workout</h1>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-3 py-1.5 bg-purple-50 text-purple-600 text-xs font-bold rounded-lg">Upper Body Strength</span>
+          <span class="px-3 py-1.5 bg-gold-50 text-gold-600 text-xs font-bold rounded-lg">55 min</span>
+          <span class="px-3 py-1.5 bg-warning/10 text-warning text-xs font-bold rounded-lg">Moderate</span>
+        </div>
+        <!-- Recovery indicator -->
+        <div class="flex items-center gap-2 bg-success/10 px-3 py-2 rounded-xl">
+          <div class="w-2.5 h-2.5 rounded-full bg-success"></div>
+          <span class="text-xs font-semibold text-success">Recovery: Good (78%)</span>
+          <span class="text-xs text-text-muted ml-auto">Based on readiness score</span>
+        </div>
+      </div>
+
+      <!-- Exercise List -->
+      <div class="px-4 space-y-2">
+
+        <!-- Exercise 1 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-xs font-bold text-purple-500">1</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-sm font-bold text-text-primary mb-1">Barbell Bench Press</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs text-text-secondary font-medium">4 sets &times; 8 reps</span>
+                <span class="text-xs text-gold-500 font-bold">@ 70kg</span>
+                <div class="flex items-center gap-1 ml-auto">
+                  <i data-lucide="timer" class="w-3 h-3 text-text-muted"></i>
+                  <span class="text-[11px] text-text-muted">90s rest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-xs font-bold text-purple-500">2</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-sm font-bold text-text-primary mb-1">Dumbbell Shoulder Press</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs text-text-secondary font-medium">3 sets &times; 10 reps</span>
+                <span class="text-xs text-gold-500 font-bold">@ 16kg</span>
+                <div class="flex items-center gap-1 ml-auto">
+                  <i data-lucide="timer" class="w-3 h-3 text-text-muted"></i>
+                  <span class="text-[11px] text-text-muted">60s rest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-xs font-bold text-purple-500">3</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-sm font-bold text-text-primary mb-1">Cable Rows</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs text-text-secondary font-medium">4 sets &times; 10 reps</span>
+                <span class="text-xs text-gold-500 font-bold">@ 50kg</span>
+                <div class="flex items-center gap-1 ml-auto">
+                  <i data-lucide="timer" class="w-3 h-3 text-text-muted"></i>
+                  <span class="text-[11px] text-text-muted">60s rest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-xs font-bold text-purple-500">4</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-sm font-bold text-text-primary mb-1">Incline Dumbbell Press</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs text-text-secondary font-medium">3 sets &times; 10 reps</span>
+                <span class="text-xs text-gold-500 font-bold">@ 22kg</span>
+                <div class="flex items-center gap-1 ml-auto">
+                  <i data-lucide="timer" class="w-3 h-3 text-text-muted"></i>
+                  <span class="text-[11px] text-text-muted">60s rest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-xs font-bold text-purple-500">5</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-sm font-bold text-text-primary mb-1">Lateral Raises</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs text-text-secondary font-medium">3 sets &times; 15 reps</span>
+                <span class="text-xs text-gold-500 font-bold">@ 8kg</span>
+                <div class="flex items-center gap-1 ml-auto">
+                  <i data-lucide="timer" class="w-3 h-3 text-text-muted"></i>
+                  <span class="text-[11px] text-text-muted">45s rest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 6 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-xs font-bold text-purple-500">6</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-sm font-bold text-text-primary mb-1">Tricep Pushdowns</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs text-text-secondary font-medium">3 sets &times; 12 reps</span>
+                <span class="text-xs text-gold-500 font-bold">@ 25kg</span>
+                <div class="flex items-center gap-1 ml-auto">
+                  <i data-lucide="timer" class="w-3 h-3 text-text-muted"></i>
+                  <span class="text-[11px] text-text-muted">45s rest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 7 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-xs font-bold text-purple-500">7</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-sm font-bold text-text-primary mb-1">Bicep Curls</h3>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs text-text-secondary font-medium">3 sets &times; 12 reps</span>
+                <span class="text-xs text-gold-500 font-bold">@ 12kg</span>
+                <div class="flex items-center gap-1 ml-auto">
+                  <i data-lucide="timer" class="w-3 h-3 text-text-muted"></i>
+                  <span class="text-[11px] text-text-muted">45s rest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Weekly Schedule -->
+      <div class="px-4 mt-4 mb-4">
+        <h3 class="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3 px-1">This Week</h3>
+        <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1">
+          <div class="flex-shrink-0 w-16 py-3 bg-gold-400 rounded-xl text-center shadow-sm">
+            <p class="text-[10px] font-semibold text-white/80">Mon</p>
+            <p class="text-[11px] font-bold text-white mt-0.5">Upper</p>
+          </div>
+          <div class="flex-shrink-0 w-16 py-3 bg-white border border-border rounded-xl text-center">
+            <p class="text-[10px] font-semibold text-text-muted">Tue</p>
+            <p class="text-[11px] font-bold text-text-primary mt-0.5">Cardio</p>
+          </div>
+          <div class="flex-shrink-0 w-16 py-3 bg-white border border-border rounded-xl text-center">
+            <p class="text-[10px] font-semibold text-text-muted">Wed</p>
+            <p class="text-[11px] font-bold text-text-primary mt-0.5">Lower</p>
+          </div>
+          <div class="flex-shrink-0 w-16 py-3 bg-white border border-border rounded-xl text-center">
+            <p class="text-[10px] font-semibold text-text-muted">Thu</p>
+            <p class="text-[11px] font-bold text-text-muted mt-0.5">Rest</p>
+          </div>
+          <div class="flex-shrink-0 w-16 py-3 bg-white border border-border rounded-xl text-center">
+            <p class="text-[10px] font-semibold text-text-muted">Fri</p>
+            <p class="text-[11px] font-bold text-text-primary mt-0.5">Push</p>
+          </div>
+          <div class="flex-shrink-0 w-16 py-3 bg-white border border-border rounded-xl text-center">
+            <p class="text-[10px] font-semibold text-text-muted">Sat</p>
+            <p class="text-[11px] font-bold text-text-primary mt-0.5">Pull</p>
+          </div>
+          <div class="flex-shrink-0 w-16 py-3 bg-white border border-border rounded-xl text-center">
+            <p class="text-[10px] font-semibold text-text-muted">Sun</p>
+            <p class="text-[11px] font-bold text-text-muted mt-0.5">Rest</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start Workout CTA -->
+      <div class="px-4 pb-2">
+        <button class="btn-press w-full py-4 bg-gold-400 hover:bg-gold-500 text-white font-bold text-base rounded-xl transition-colors shadow-sm">
+          Start Workout
+        </button>
+      </div>
+
+      <!-- Bottom spacer -->
+      <div class="h-4"></div>
+
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 max-w-[375px] mx-auto bg-white border-t border-border z-50">
+      <div class="flex justify-around items-center h-16 px-2">
+        <a href="dashboard.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="meals.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="utensils" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Meals</span>
+        </a>
+        <a href="workout.html" class="flex flex-col items-center gap-1 text-purple-500">
+          <i data-lucide="dumbbell" class="w-5 h-5"></i>
+          <span class="text-[10px] font-semibold">Workout</span>
+        </a>
+        <a href="coach.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Coach</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="user" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Profile</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

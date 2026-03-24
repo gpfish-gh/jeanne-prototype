@@ -1,0 +1,132 @@
+/* ========================================
+   Jeanné — Custom Styles
+   ======================================== */
+
+/* Page load animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-content {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* Readiness circle animation */
+@keyframes drawCircle {
+  from { stroke-dashoffset: 439.82; }
+}
+
+.readiness-ring {
+  animation: drawCircle 1.2s ease-out forwards;
+}
+
+/* Score count-up animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.score-number {
+  animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+/* Chat bubbles */
+.chat-bubble-coach {
+  background: linear-gradient(135deg, #F5F2FC, #E8E0F7);
+  border-radius: 16px 16px 16px 4px;
+}
+
+.chat-bubble-user {
+  background: linear-gradient(135deg, #D4A053, #C48B38);
+  color: white;
+  border-radius: 16px 16px 4px 16px;
+}
+
+/* Scrollbar hiding for horizontal scroll areas */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Device connection card pulse animation */
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(212, 160, 83, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(212, 160, 83, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 160, 83, 0); }
+}
+
+.device-connecting {
+  animation: pulseRing 1.5s ease-out infinite;
+}
+
+/* Sleep stage bar animation */
+@keyframes growUp {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+.sleep-bar {
+  transform-origin: bottom;
+  animation: growUp 0.6s ease-out forwards;
+}
+
+/* Supplement check-off */
+.supplement-checked {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+/* Smooth button press */
+.btn-press:active {
+  transform: scale(0.97);
+  transition: transform 0.1s;
+}
+
+/* Card hover/tap feedback */
+.card-tap:active {
+  transform: scale(0.985);
+  transition: transform 0.1s;
+}
+
+/* Goal card selected state */
+.goal-selected {
+  ring: 2px solid #D4A053;
+  background-color: #FDF8F0;
+}
+
+/* Floating action button shadow */
+.fab-shadow {
+  box-shadow: 0 4px 14px rgba(212, 160, 83, 0.4);
+}
+
+/* Bottom nav safe area */
+.safe-bottom {
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Quick action chip hover */
+.chip-action:active {
+  background-color: #E8E0F7;
+  transition: background-color 0.15s;
+}
+
+/* Progress dot animation */
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Input focus styles */
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(155, 127, 212, 0.3);
+}
+
+/* Typing indicator dots for coach */
+@keyframes typingDot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-4px); }
+}
+
+.typing-dot:nth-child(1) { animation: typingDot 1.4s infinite 0s; }
+.typing-dot:nth-child(2) { animation: typingDot 1.4s infinite 0.2s; }
+.typing-dot:nth-child(3) { animation: typingDot 1.4s infinite 0.4s; }

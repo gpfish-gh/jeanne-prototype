@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jeanné — About You</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-gold-50: #FDF8F0;
+      --color-gold-100: #F9EDDA;
+      --color-gold-200: #F0D9B0;
+      --color-gold-300: #E5C080;
+      --color-gold-400: #D4A053;
+      --color-gold-500: #C48B38;
+      --color-gold-600: #A8722B;
+      --color-gold-700: #8A5C22;
+      --color-purple-50: #F5F2FC;
+      --color-purple-100: #E8E0F7;
+      --color-purple-200: #D1C0EF;
+      --color-purple-300: #B59FE3;
+      --color-purple-400: #9B7FD4;
+      --color-purple-500: #8266C4;
+      --color-purple-600: #6A4FAD;
+      --color-purple-700: #543D8C;
+      --color-blue-50: #F0F4FC;
+      --color-blue-100: #DCE6F7;
+      --color-blue-200: #B8CCEF;
+      --color-blue-300: #8DADE3;
+      --color-blue-400: #5B8FD4;
+      --color-blue-500: #4175C0;
+      --color-blue-600: #335EA0;
+      --color-blue-700: #284A80;
+      --color-bg: #F8F7F4;
+      --color-surface: #FFFFFF;
+      --color-border: #E8E5DF;
+      --color-text-primary: #1A1A1A;
+      --color-text-secondary: #6B6B6B;
+      --color-text-muted: #9B9B9B;
+      --color-success: #34D399;
+      --color-warning: #FBBF24;
+      --color-danger: #F87171;
+    }
+  </style>
+</head>
+<body class="bg-bg font-[Inter] antialiased">
+  <div class="max-w-[375px] mx-auto min-h-screen bg-bg relative flex flex-col">
+    <div class="page-content flex-1 flex flex-col">
+
+      <!-- Status bar spacer -->
+      <div class="h-11"></div>
+
+      <!-- Top bar -->
+      <div class="flex items-center justify-between px-5 mb-2">
+        <a href="onboarding-goals.html" class="w-10 h-10 flex items-center justify-center -ml-2">
+          <i data-lucide="arrow-left" class="w-5 h-5 text-text-primary"></i>
+        </a>
+        <div class="flex gap-1.5">
+          <div class="w-8 h-1 rounded-full bg-gold-400"></div>
+          <div class="w-8 h-1 rounded-full bg-gold-400"></div>
+          <div class="w-8 h-1 rounded-full bg-border"></div>
+          <div class="w-8 h-1 rounded-full bg-border"></div>
+        </div>
+        <div class="w-10"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="px-5 pt-4 flex-1 overflow-y-auto">
+        <h1 class="text-2xl font-bold text-text-primary mb-2">About You</h1>
+        <p class="text-sm text-text-secondary mb-6">Help us personalise your daily plan</p>
+
+        <!-- Form fields -->
+        <div class="space-y-4">
+          <!-- Age -->
+          <div>
+            <label class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1.5 block">Age</label>
+            <input type="number" value="32" class="w-full h-12 bg-white border border-border rounded-xl px-4 text-sm font-medium text-text-primary">
+          </div>
+
+          <!-- Weight & Height row -->
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1.5 block">Weight</label>
+              <div class="relative">
+                <input type="number" value="85" class="w-full h-12 bg-white border border-border rounded-xl px-4 pr-10 text-sm font-medium text-text-primary">
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-text-muted font-medium">kg</span>
+              </div>
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1.5 block">Height</label>
+              <div class="relative">
+                <input type="number" value="180" class="w-full h-12 bg-white border border-border rounded-xl px-4 pr-10 text-sm font-medium text-text-primary">
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-text-muted font-medium">cm</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Target Weight -->
+          <div>
+            <label class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1.5 block">Target Weight</label>
+            <div class="relative">
+              <input type="number" value="78" class="w-full h-12 bg-white border border-border rounded-xl px-4 pr-10 text-sm font-medium text-text-primary">
+              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-text-muted font-medium">kg</span>
+            </div>
+          </div>
+
+          <!-- Activity Level -->
+          <div>
+            <label class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-2 block">Activity Level</label>
+            <div class="flex gap-1.5 overflow-x-auto hide-scrollbar">
+              <button data-activity-option class="flex-shrink-0 px-3 py-2.5 bg-white text-text-muted border border-border rounded-xl text-xs font-medium transition-all">Sedentary</button>
+              <button data-activity-option class="flex-shrink-0 px-3 py-2.5 bg-white text-text-muted border border-border rounded-xl text-xs font-medium transition-all">Light</button>
+              <button data-activity-option class="flex-shrink-0 px-3 py-2.5 bg-gold-400 text-white border border-gold-400 rounded-xl text-xs font-semibold transition-all">Moderate</button>
+              <button data-activity-option class="flex-shrink-0 px-3 py-2.5 bg-white text-text-muted border border-border rounded-xl text-xs font-medium transition-all">Active</button>
+              <button data-activity-option class="flex-shrink-0 px-3 py-2.5 bg-white text-text-muted border border-border rounded-xl text-xs font-medium transition-all">Very Active</button>
+            </div>
+          </div>
+
+          <!-- Dietary Preferences -->
+          <div>
+            <label class="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-2 block">Dietary Preferences</label>
+            <div class="flex flex-wrap gap-2">
+              <button data-diet-chip class="px-3.5 py-2 bg-purple-50 border border-purple-400 rounded-full text-xs font-medium text-purple-600 transition-all">No Restrictions</button>
+              <button data-diet-chip class="px-3.5 py-2 bg-white border border-border rounded-full text-xs font-medium text-text-muted transition-all">Vegetarian</button>
+              <button data-diet-chip class="px-3.5 py-2 bg-white border border-border rounded-full text-xs font-medium text-text-muted transition-all">Vegan</button>
+              <button data-diet-chip class="px-3.5 py-2 bg-white border border-border rounded-full text-xs font-medium text-text-muted transition-all">Keto</button>
+              <button data-diet-chip class="px-3.5 py-2 bg-white border border-border rounded-full text-xs font-medium text-text-muted transition-all">Paleo</button>
+              <button data-diet-chip class="px-3.5 py-2 bg-white border border-border rounded-full text-xs font-medium text-text-muted transition-all">Gluten-free</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="px-5 py-6">
+        <a href="onboarding-devices.html" class="btn-press block w-full py-4 bg-gold-400 hover:bg-gold-500 text-white font-bold text-base rounded-xl transition-colors shadow-sm text-center">
+          Continue
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

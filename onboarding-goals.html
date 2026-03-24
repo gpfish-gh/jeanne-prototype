@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jeanné — Choose Your Goal</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-gold-50: #FDF8F0;
+      --color-gold-100: #F9EDDA;
+      --color-gold-200: #F0D9B0;
+      --color-gold-300: #E5C080;
+      --color-gold-400: #D4A053;
+      --color-gold-500: #C48B38;
+      --color-gold-600: #A8722B;
+      --color-gold-700: #8A5C22;
+      --color-purple-50: #F5F2FC;
+      --color-purple-100: #E8E0F7;
+      --color-purple-200: #D1C0EF;
+      --color-purple-300: #B59FE3;
+      --color-purple-400: #9B7FD4;
+      --color-purple-500: #8266C4;
+      --color-purple-600: #6A4FAD;
+      --color-purple-700: #543D8C;
+      --color-blue-50: #F0F4FC;
+      --color-blue-100: #DCE6F7;
+      --color-blue-200: #B8CCEF;
+      --color-blue-300: #8DADE3;
+      --color-blue-400: #5B8FD4;
+      --color-blue-500: #4175C0;
+      --color-blue-600: #335EA0;
+      --color-blue-700: #284A80;
+      --color-bg: #F8F7F4;
+      --color-surface: #FFFFFF;
+      --color-border: #E8E5DF;
+      --color-text-primary: #1A1A1A;
+      --color-text-secondary: #6B6B6B;
+      --color-text-muted: #9B9B9B;
+      --color-success: #34D399;
+      --color-warning: #FBBF24;
+      --color-danger: #F87171;
+    }
+  </style>
+</head>
+<body class="bg-bg font-[Inter] antialiased">
+  <div class="max-w-[375px] mx-auto min-h-screen bg-bg relative flex flex-col">
+    <div class="page-content flex-1 flex flex-col">
+
+      <!-- Status bar spacer -->
+      <div class="h-11"></div>
+
+      <!-- Top bar -->
+      <div class="flex items-center justify-between px-5 mb-2">
+        <a href="index.html" class="w-10 h-10 flex items-center justify-center -ml-2">
+          <i data-lucide="arrow-left" class="w-5 h-5 text-text-primary"></i>
+        </a>
+        <!-- Progress dots -->
+        <div class="flex gap-1.5">
+          <div class="w-8 h-1 rounded-full bg-gold-400"></div>
+          <div class="w-8 h-1 rounded-full bg-border"></div>
+          <div class="w-8 h-1 rounded-full bg-border"></div>
+          <div class="w-8 h-1 rounded-full bg-border"></div>
+        </div>
+        <div class="w-10"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="px-5 pt-4 flex-1">
+        <h1 class="text-2xl font-bold text-text-primary mb-2">What's your primary goal?</h1>
+        <p class="text-sm text-text-secondary mb-8">Choose one to personalize your experience</p>
+
+        <!-- Goal cards 2x2 grid -->
+        <div class="grid grid-cols-2 gap-3">
+          <!-- Fat Loss -->
+          <div data-goal-card class="bg-white rounded-2xl border-2 border-border/50 p-5 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm relative">
+            <div data-check class="absolute top-3 right-3 w-5 h-5 rounded-full bg-gold-400 flex items-center justify-center hidden">
+              <i data-lucide="check" class="w-3 h-3 text-white"></i>
+            </div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-100 to-gold-200 flex items-center justify-center mb-3">
+              <i data-lucide="flame" class="w-7 h-7 text-gold-500"></i>
+            </div>
+            <h3 class="font-bold text-sm text-text-primary mb-1">Fat Loss</h3>
+            <p class="text-[11px] text-text-muted leading-tight">Burn fat while preserving muscle</p>
+          </div>
+
+          <!-- Muscle Gain -->
+          <div data-goal-card class="bg-white rounded-2xl border-2 border-border/50 p-5 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm relative">
+            <div data-check class="absolute top-3 right-3 w-5 h-5 rounded-full bg-gold-400 flex items-center justify-center hidden">
+              <i data-lucide="check" class="w-3 h-3 text-white"></i>
+            </div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center mb-3">
+              <i data-lucide="dumbbell" class="w-7 h-7 text-purple-500"></i>
+            </div>
+            <h3 class="font-bold text-sm text-text-primary mb-1">Muscle Gain</h3>
+            <p class="text-[11px] text-text-muted leading-tight">Build strength and lean mass</p>
+          </div>
+
+          <!-- Endurance -->
+          <div data-goal-card class="bg-white rounded-2xl border-2 border-border/50 p-5 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm relative">
+            <div data-check class="absolute top-3 right-3 w-5 h-5 rounded-full bg-gold-400 flex items-center justify-center hidden">
+              <i data-lucide="check" class="w-3 h-3 text-white"></i>
+            </div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center mb-3">
+              <i data-lucide="heart-pulse" class="w-7 h-7 text-blue-500"></i>
+            </div>
+            <h3 class="font-bold text-sm text-text-primary mb-1">Endurance</h3>
+            <p class="text-[11px] text-text-muted leading-tight">Boost cardio and stamina</p>
+          </div>
+
+          <!-- General Wellness -->
+          <div data-goal-card class="bg-white rounded-2xl border-2 border-border/50 p-5 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm relative">
+            <div data-check class="absolute top-3 right-3 w-5 h-5 rounded-full bg-gold-400 flex items-center justify-center hidden">
+              <i data-lucide="check" class="w-3 h-3 text-white"></i>
+            </div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center mb-3">
+              <i data-lucide="leaf" class="w-7 h-7 text-emerald-500"></i>
+            </div>
+            <h3 class="font-bold text-sm text-text-primary mb-1">Wellness</h3>
+            <p class="text-[11px] text-text-muted leading-tight">Balanced health and longevity</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="px-5 py-6">
+        <a href="onboarding-profile.html" class="btn-press block w-full py-4 bg-gold-400 hover:bg-gold-500 text-white font-bold text-base rounded-xl transition-colors shadow-sm text-center">
+          Continue
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jeanné — Connect Wearables</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-gold-50: #FDF8F0;
+      --color-gold-100: #F9EDDA;
+      --color-gold-200: #F0D9B0;
+      --color-gold-300: #E5C080;
+      --color-gold-400: #D4A053;
+      --color-gold-500: #C48B38;
+      --color-gold-600: #A8722B;
+      --color-gold-700: #8A5C22;
+      --color-purple-50: #F5F2FC;
+      --color-purple-100: #E8E0F7;
+      --color-purple-200: #D1C0EF;
+      --color-purple-300: #B59FE3;
+      --color-purple-400: #9B7FD4;
+      --color-purple-500: #8266C4;
+      --color-purple-600: #6A4FAD;
+      --color-purple-700: #543D8C;
+      --color-blue-50: #F0F4FC;
+      --color-blue-100: #DCE6F7;
+      --color-blue-200: #B8CCEF;
+      --color-blue-300: #8DADE3;
+      --color-blue-400: #5B8FD4;
+      --color-blue-500: #4175C0;
+      --color-blue-600: #335EA0;
+      --color-blue-700: #284A80;
+      --color-bg: #F8F7F4;
+      --color-surface: #FFFFFF;
+      --color-border: #E8E5DF;
+      --color-text-primary: #1A1A1A;
+      --color-text-secondary: #6B6B6B;
+      --color-text-muted: #9B9B9B;
+      --color-success: #34D399;
+      --color-warning: #FBBF24;
+      --color-danger: #F87171;
+    }
+  </style>
+</head>
+<body class="bg-bg font-[Inter] antialiased">
+  <div class="max-w-[375px] mx-auto min-h-screen bg-bg relative flex flex-col">
+    <div class="page-content flex-1 flex flex-col">
+
+      <!-- Status bar spacer -->
+      <div class="h-11"></div>
+
+      <!-- Top bar -->
+      <div class="flex items-center justify-between px-5 mb-2">
+        <a href="onboarding-profile.html" class="w-10 h-10 flex items-center justify-center -ml-2">
+          <i data-lucide="arrow-left" class="w-5 h-5 text-text-primary"></i>
+        </a>
+        <div class="flex gap-1.5">
+          <div class="w-8 h-1 rounded-full bg-gold-400"></div>
+          <div class="w-8 h-1 rounded-full bg-gold-400"></div>
+          <div class="w-8 h-1 rounded-full bg-gold-400"></div>
+          <div class="w-8 h-1 rounded-full bg-border"></div>
+        </div>
+        <div class="w-10"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="px-5 pt-4 flex-1">
+        <h1 class="text-2xl font-bold text-text-primary mb-2">Connect Your Wearables</h1>
+        <p class="text-sm text-text-secondary mb-8">Sync your health data for personalised insights</p>
+
+        <!-- Device cards -->
+        <div class="space-y-3">
+
+          <!-- Garmin (pre-connected) -->
+          <div data-device-card class="bg-white rounded-2xl border border-border/50 p-4 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+              <span class="text-lg font-extrabold text-blue-500">G</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-sm font-bold text-text-primary">Garmin</h3>
+              <p class="text-xs text-text-muted">Forerunner Series</p>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <div data-status-dot class="w-2 h-2 rounded-full bg-success"></div>
+              <button data-connect-btn data-connected="true" class="px-4 py-2 bg-success/10 text-success text-xs font-semibold rounded-lg transition-all">
+                Connected
+              </button>
+            </div>
+          </div>
+
+          <!-- Oura (pre-connected) -->
+          <div data-device-card class="bg-white rounded-2xl border border-border/50 p-4 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center flex-shrink-0">
+              <span class="text-lg font-extrabold text-purple-500">O</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-sm font-bold text-text-primary">Oura Ring</h3>
+              <p class="text-xs text-text-muted">Gen 3 / Gen 4</p>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <div data-status-dot class="w-2 h-2 rounded-full bg-success"></div>
+              <button data-connect-btn data-connected="true" class="px-4 py-2 bg-success/10 text-success text-xs font-semibold rounded-lg transition-all">
+                Connected
+              </button>
+            </div>
+          </div>
+
+          <!-- Apple Watch -->
+          <div data-device-card class="bg-white rounded-2xl border border-border/50 p-4 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="watch" class="w-6 h-6 text-gray-600"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-sm font-bold text-text-primary">Apple Watch</h3>
+              <p class="text-xs text-text-muted">via Apple Health</p>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <div data-status-dot class="w-2 h-2 rounded-full bg-border"></div>
+              <button data-connect-btn data-connected="false" class="px-4 py-2 bg-gold-400 text-white text-xs font-semibold rounded-lg transition-all btn-press">
+                Connect
+              </button>
+            </div>
+          </div>
+
+          <!-- WHOOP -->
+          <div data-device-card class="bg-white rounded-2xl border border-border/50 p-4 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gray-900 flex items-center justify-center flex-shrink-0">
+              <span class="text-lg font-extrabold text-white">W</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-sm font-bold text-text-primary">WHOOP</h3>
+              <p class="text-xs text-text-muted">WHOOP 4.0</p>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <div data-status-dot class="w-2 h-2 rounded-full bg-border"></div>
+              <button data-connect-btn data-connected="false" class="px-4 py-2 bg-gold-400 text-white text-xs font-semibold rounded-lg transition-all btn-press">
+                Connect
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Skip link -->
+        <p class="text-center mt-6">
+          <a href="onboarding-ready.html" class="text-sm text-text-muted hover:text-text-secondary">Skip for now</a>
+        </p>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="px-5 py-6">
+        <a href="onboarding-ready.html" class="btn-press block w-full py-4 bg-gold-400 hover:bg-gold-500 text-white font-bold text-base rounded-xl transition-colors shadow-sm text-center">
+          Continue
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
