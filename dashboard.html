@@ -67,44 +67,154 @@
         </a>
       </div>
 
-      <!-- Readiness Score -->
-      <div class="py-6 flex flex-col items-center">
-        <div class="relative w-44 h-44">
-          <svg class="w-full h-full -rotate-90" viewBox="0 0 160 160">
-            <!-- Background ring -->
-            <circle cx="80" cy="80" r="70" fill="none" stroke="#E8E5DF" stroke-width="10"/>
-            <!-- Progress ring -->
-            <circle cx="80" cy="80" r="70" fill="none" stroke="url(#readinessGrad)"
-                    stroke-width="10" stroke-linecap="round"
-                    class="readiness-ring"
-                    stroke-dasharray="439.82" stroke-dashoffset="96.76"/>
-            <defs>
-              <linearGradient id="readinessGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#34D399"/>
-                <stop offset="100%" stop-color="#5B8FD4"/>
-              </linearGradient>
-            </defs>
+      <!-- Energy Balance Barometer -->
+      <div class="pt-4 pb-5 flex flex-col items-center">
+        <p class="text-[10px] font-semibold text-text-muted uppercase tracking-widest mb-1">Energy Balance · 7-day avg</p>
+        <div class="relative w-full max-w-[320px] px-4">
+          <svg data-barometer viewBox="0 0 320 180" class="w-full h-auto">
+            <g data-segments></g>
+            <!-- Tick labels -->
+            <text x="20" y="175" text-anchor="middle" fill="#9B9B9B" style="font-size: 10px; font-weight: 500;">−1000</text>
+            <text x="90" y="175" text-anchor="middle" fill="#9B9B9B" style="font-size: 10px; font-weight: 500;">−625</text>
+            <text x="160" y="175" text-anchor="middle" fill="#9B9B9B" style="font-size: 10px; font-weight: 500;">−250</text>
+            <text x="230" y="175" text-anchor="middle" fill="#9B9B9B" style="font-size: 10px; font-weight: 500;">+125</text>
+            <text x="300" y="175" text-anchor="middle" fill="#9B9B9B" style="font-size: 10px; font-weight: 500;">+500</text>
+            <!-- Needle (rotated via --final-angle) -->
+            <g data-barometer-needle class="barometer-needle" style="--final-angle: -27.6deg">
+              <polygon points="160,160 154,164 158,58 160,52 162,58 166,164" fill="#1A1A1A"/>
+              <circle cx="160" cy="160" r="10" fill="#1A1A1A"/>
+              <circle cx="160" cy="160" r="4" fill="#F8F7F4"/>
+            </g>
           </svg>
-          <div class="absolute inset-0 flex flex-col items-center justify-center">
-            <span class="text-5xl font-bold text-text-primary score-number">78</span>
-            <span class="text-[10px] font-semibold text-text-muted uppercase tracking-widest mt-1">Readiness</span>
+        </div>
+
+        <!-- Readout -->
+        <div class="flex flex-col items-center mt-2">
+          <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider" style="background-color: rgba(52, 211, 153, 0.12); color: #059669;">On track for body recomp</span>
+          <div class="flex items-baseline gap-2 mt-2">
+            <span class="text-4xl font-extrabold text-text-primary tracking-tight score-number">−480</span>
+            <span class="text-sm font-semibold text-text-secondary">kcal/day</span>
+          </div>
+          <p class="text-[11px] text-text-muted mt-1">Target: −500 kcal/day</p>
+        </div>
+      </div>
+
+      <!-- Energy In Card -->
+      <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4 mx-4 mb-3 card-tap">
+        <a href="meals.html" class="block">
+          <div class="flex items-center justify-between mb-1">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-gold-50 flex items-center justify-center">
+                <i data-lucide="arrow-down-circle" class="w-4.5 h-4.5 text-gold-500"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-sm text-text-primary leading-tight">Energy In</h3>
+                <p class="text-[11px] text-text-muted leading-tight mt-0.5">Today: 1,420 / 2,200 kcal</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted"></i>
+          </div>
+          <!-- Calorie progress -->
+          <div class="mt-3 mb-3">
+            <div class="flex justify-between text-xs mb-1.5">
+              <span class="font-medium text-text-secondary">Calories eaten</span>
+              <span class="font-bold text-text-primary">65%</span>
+            </div>
+            <div class="h-2.5 bg-bg rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-gold-300 to-gold-400 rounded-full" style="width: 65%"></div>
+            </div>
+          </div>
+          <!-- Macro bars -->
+          <div class="space-y-2">
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-medium text-text-secondary">Protein</span>
+                <span class="font-semibold text-text-primary">120 / 180g</span>
+              </div>
+              <div class="h-1.5 bg-purple-100 rounded-full overflow-hidden">
+                <div class="h-full bg-purple-400 rounded-full" style="width: 67%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-medium text-text-secondary">Carbs</span>
+                <span class="font-semibold text-text-primary">145 / 200g</span>
+              </div>
+              <div class="h-1.5 bg-blue-100 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-400 rounded-full" style="width: 73%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-medium text-text-secondary">Fat</span>
+                <span class="font-semibold text-text-primary">48 / 73g</span>
+              </div>
+              <div class="h-1.5 bg-gold-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gold-400 rounded-full" style="width: 66%"></div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Energy Out Card -->
+      <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4 mx-4 mb-3">
+        <div class="flex items-center justify-between mb-1">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-danger/10 flex items-center justify-center">
+              <i data-lucide="flame" class="w-4.5 h-4.5 text-danger"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-sm text-text-primary leading-tight">Energy Out</h3>
+              <p class="text-[11px] text-text-muted leading-tight mt-0.5">Total daily burn</p>
+            </div>
           </div>
         </div>
-        <!-- Metric chips -->
-        <div class="flex items-center gap-4 mt-4">
-          <div class="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-border">
-            <i data-lucide="heart-pulse" class="w-3.5 h-3.5 text-purple-400"></i>
-            <span class="text-xs font-semibold text-text-primary">HRV 52ms</span>
+        <!-- Hero total -->
+        <div class="flex items-baseline gap-2 mt-3">
+          <span class="text-3xl font-extrabold text-text-primary tracking-tight">2,650</span>
+          <span class="text-xs font-medium text-text-muted">/ 2,820 kcal target</span>
+        </div>
+        <!-- Progress bar -->
+        <div class="mt-1.5 h-2.5 bg-bg rounded-full overflow-hidden">
+          <div class="h-full rounded-full" style="width: 94%; background: linear-gradient(90deg, #F87171 0%, #FBBF24 60%, #D4A053 100%);"></div>
+        </div>
+        <!-- Breakdown row -->
+        <div class="grid grid-cols-3 gap-2 mt-4">
+          <div class="bg-bg rounded-xl p-2.5 text-center">
+            <div class="flex items-center justify-center gap-1 mb-0.5">
+              <i data-lucide="moon" class="w-3 h-3 text-purple-400"></i>
+              <span class="text-[10px] font-semibold text-text-muted uppercase tracking-wide">BMR</span>
+            </div>
+            <p class="text-sm font-bold text-text-primary">1,820</p>
+            <p class="text-[9px] text-text-muted">kcal</p>
           </div>
-          <div class="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-border">
-            <i data-lucide="heart" class="w-3.5 h-3.5 text-danger"></i>
-            <span class="text-xs font-semibold text-text-primary">RHR 58</span>
+          <div class="bg-bg rounded-xl p-2.5 text-center">
+            <div class="flex items-center justify-center gap-1 mb-0.5">
+              <i data-lucide="footprints" class="w-3 h-3 text-blue-400"></i>
+              <span class="text-[10px] font-semibold text-text-muted uppercase tracking-wide">Activity</span>
+            </div>
+            <p class="text-sm font-bold text-text-primary">450</p>
+            <p class="text-[9px] text-text-muted">kcal</p>
           </div>
-          <div class="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full border border-border">
-            <i data-lucide="wind" class="w-3.5 h-3.5 text-blue-400"></i>
-            <span class="text-xs font-semibold text-text-primary">SpO2 97%</span>
+          <div class="bg-bg rounded-xl p-2.5 text-center">
+            <div class="flex items-center justify-center gap-1 mb-0.5">
+              <i data-lucide="dumbbell" class="w-3 h-3 text-gold-500"></i>
+              <span class="text-[10px] font-semibold text-text-muted uppercase tracking-wide">Workout</span>
+            </div>
+            <p class="text-sm font-bold text-text-primary">380</p>
+            <p class="text-[9px] text-text-muted">kcal</p>
           </div>
         </div>
+        <!-- Today's workout chips -->
+        <div class="flex items-center gap-1.5 mt-4 flex-wrap">
+          <span class="px-2.5 py-1 bg-purple-50 text-purple-600 text-[11px] font-semibold rounded-lg">Upper Body Strength</span>
+          <span class="px-2.5 py-1 bg-gold-50 text-gold-600 text-[11px] font-semibold rounded-lg">55 min</span>
+          <span class="px-2.5 py-1 bg-warning/10 text-warning text-[11px] font-semibold rounded-lg">Moderate</span>
+        </div>
+        <a href="workout.html" class="btn-press block w-full py-3 mt-3 bg-white border-2 border-purple-400 text-purple-500 font-bold text-sm rounded-xl text-center hover:bg-purple-50 transition-colors">
+          Start Workout
+        </a>
       </div>
 
       <!-- Sleep Summary Card -->
@@ -147,82 +257,6 @@
             <div class="flex-1 flex flex-col items-center gap-0.5">
               <div class="w-full bg-purple-500 rounded-sm sleep-bar" style="height: 22px; animation-delay: 0.4s"></div>
               <span class="text-[9px] text-text-muted">Deep</span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Today's Workout Card -->
-      <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4 mx-4 mb-3 card-tap">
-        <div class="flex items-center justify-between mb-3">
-          <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-gold-50 flex items-center justify-center">
-              <i data-lucide="dumbbell" class="w-4.5 h-4.5 text-gold-500"></i>
-            </div>
-            <h3 class="font-semibold text-sm text-text-primary">Today's Workout</h3>
-          </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted"></i>
-        </div>
-        <div class="flex items-center gap-2 mb-3">
-          <span class="px-2.5 py-1 bg-purple-50 text-purple-600 text-xs font-semibold rounded-lg">Upper Body Strength</span>
-          <span class="px-2.5 py-1 bg-gold-50 text-gold-600 text-xs font-semibold rounded-lg">55 min</span>
-          <span class="px-2.5 py-1 bg-warning/10 text-warning text-xs font-semibold rounded-lg">Moderate</span>
-        </div>
-        <a href="workout.html" class="btn-press block w-full py-3 bg-white border-2 border-purple-400 text-purple-500 font-bold text-sm rounded-xl text-center hover:bg-purple-50 transition-colors">
-          Start Workout
-        </a>
-      </div>
-
-      <!-- Nutrition Card -->
-      <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4 mx-4 mb-3 card-tap">
-        <a href="meals.html" class="block">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2.5">
-              <div class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center">
-                <i data-lucide="utensils" class="w-4.5 h-4.5 text-blue-500"></i>
-              </div>
-              <h3 class="font-semibold text-sm text-text-primary">Nutrition</h3>
-            </div>
-            <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted"></i>
-          </div>
-          <!-- Calorie progress -->
-          <div class="mb-3">
-            <div class="flex justify-between text-xs mb-1.5">
-              <span class="font-medium text-text-secondary">Calories</span>
-              <span class="font-bold text-text-primary">1,420 / 2,200 kcal</span>
-            </div>
-            <div class="h-2.5 bg-bg rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-gold-300 to-gold-400 rounded-full" style="width: 65%"></div>
-            </div>
-          </div>
-          <!-- Macro bars -->
-          <div class="space-y-2">
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="font-medium text-text-secondary">Protein</span>
-                <span class="font-semibold text-text-primary">120 / 180g</span>
-              </div>
-              <div class="h-1.5 bg-purple-100 rounded-full overflow-hidden">
-                <div class="h-full bg-purple-400 rounded-full" style="width: 67%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="font-medium text-text-secondary">Carbs</span>
-                <span class="font-semibold text-text-primary">145 / 200g</span>
-              </div>
-              <div class="h-1.5 bg-blue-100 rounded-full overflow-hidden">
-                <div class="h-full bg-blue-400 rounded-full" style="width: 73%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="font-medium text-text-secondary">Fat</span>
-                <span class="font-semibold text-text-primary">48 / 73g</span>
-              </div>
-              <div class="h-1.5 bg-gold-100 rounded-full overflow-hidden">
-                <div class="h-full bg-gold-400 rounded-full" style="width: 66%"></div>
-              </div>
             </div>
           </div>
         </a>
@@ -344,6 +378,89 @@
 
   </div>
 
+  <script>
+    // ---- Energy Balance Barometer ----
+    // Builds the segmented semi-circle gauge and sets needle angle from the
+    // 7-day average daily calorie balance. Static data for the prototype.
+    (function buildBarometer() {
+      const svg = document.querySelector('[data-barometer]');
+      if (!svg) return;
+
+      // Geometry
+      const cx = 160, cy = 160;
+      const R_OUTER = 140;
+      const R_INNER = 100;
+      const NUM_SEGMENTS = 18;
+      const GAP_DEG = 1.2;
+      const SEG_DEG = (180 - GAP_DEG * NUM_SEGMENTS) / NUM_SEGMENTS;
+      const START_DEG = 180; // left tip in SVG coords
+
+      // Scale: map daily avg kcal to angle (180° = -1000, 360° = +500)
+      const V_MIN = -1000, V_MAX = 500;
+      const valueToAngle = (v) => 180 + 180 * (v - V_MIN) / (V_MAX - V_MIN);
+
+      // Zone boundary angles (goal-aware traffic light for body recomp)
+      const BOUND = {
+        tooAggressive: valueToAngle(-800),  // ≤ red
+        watchFatigue:  valueToAngle(-600),  // amber
+        sweetSpot:     valueToAngle(-300),  // green
+        slowProgress:  valueToAngle(0),     // amber
+        // anything >0 = red (off target / surplus)
+      };
+
+      function zoneColor(angle) {
+        if (angle <= BOUND.tooAggressive) return '#F87171';
+        if (angle <= BOUND.watchFatigue)  return '#FBBF24';
+        if (angle <= BOUND.sweetSpot)     return '#34D399';
+        if (angle <= BOUND.slowProgress)  return '#FBBF24';
+        return '#F87171';
+      }
+
+      // Polar → Cartesian (SVG y-down)
+      function pt(angle, radius) {
+        const rad = angle * Math.PI / 180;
+        return [cx + radius * Math.cos(rad), cy + radius * Math.sin(rad)];
+      }
+
+      const segmentsGroup = svg.querySelector('[data-segments]');
+      const svgNS = 'http://www.w3.org/2000/svg';
+
+      for (let i = 0; i < NUM_SEGMENTS; i++) {
+        const a1 = START_DEG + i * (SEG_DEG + GAP_DEG);
+        const a2 = a1 + SEG_DEG;
+        const midAngle = (a1 + a2) / 2;
+        const color = zoneColor(midAngle);
+
+        const [x1o, y1o] = pt(a1, R_OUTER);
+        const [x2o, y2o] = pt(a2, R_OUTER);
+        const [x2i, y2i] = pt(a2, R_INNER);
+        const [x1i, y1i] = pt(a1, R_INNER);
+
+        // Path: outer arc (sweep-flag 1) → line inward → inner arc (sweep-flag 0) → close
+        const d =
+          `M ${x1o.toFixed(2)} ${y1o.toFixed(2)} ` +
+          `A ${R_OUTER} ${R_OUTER} 0 0 1 ${x2o.toFixed(2)} ${y2o.toFixed(2)} ` +
+          `L ${x2i.toFixed(2)} ${y2i.toFixed(2)} ` +
+          `A ${R_INNER} ${R_INNER} 0 0 0 ${x1i.toFixed(2)} ${y1i.toFixed(2)} Z`;
+
+        const path = document.createElementNS(svgNS, 'path');
+        path.setAttribute('d', d);
+        path.setAttribute('fill', color);
+        path.setAttribute('class', 'barometer-segment');
+        path.style.animationDelay = (i * 35) + 'ms';
+        segmentsGroup.appendChild(path);
+      }
+
+      // Sample data: Alex's 7-day average
+      const currentValue = -480;
+      const needleAngle = valueToAngle(currentValue);
+      const rotationFromVertical = needleAngle - 270; // 270° = pointing up
+      const needle = svg.querySelector('[data-barometer-needle]');
+      if (needle) {
+        needle.style.setProperty('--final-angle', rotationFromVertical.toFixed(2) + 'deg');
+      }
+    })();
+  </script>
   <script src="js/app.js"></script>
 </body>
 </html>

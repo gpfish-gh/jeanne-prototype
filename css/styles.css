@@ -12,13 +12,27 @@
   animation: fadeInUp 0.4s ease-out;
 }
 
-/* Readiness circle animation */
-@keyframes drawCircle {
-  from { stroke-dashoffset: 439.82; }
+/* Barometer needle sweep animation */
+@keyframes needleSweep {
+  from { transform: rotate(-90deg); }
+  to { transform: rotate(var(--final-angle, 0deg)); }
 }
 
-.readiness-ring {
-  animation: drawCircle 1.2s ease-out forwards;
+.barometer-needle {
+  transform-origin: 160px 160px;
+  transform: rotate(var(--final-angle, 0deg));
+  animation: needleSweep 0.9s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+}
+
+/* Barometer segment fade-in */
+@keyframes segFade {
+  from { opacity: 0; }
+  to { opacity: 0.95; }
+}
+
+.barometer-segment {
+  opacity: 0;
+  animation: segFade 0.4s ease-out forwards;
 }
 
 /* Score count-up animation */
