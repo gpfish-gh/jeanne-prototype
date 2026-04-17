@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jeanné — Biomarkers Coach</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-gold-50: #FDF8F0; --color-gold-100: #F9EDDA; --color-gold-200: #F0D9B0; --color-gold-300: #E5C080;
+      --color-gold-400: #D4A053; --color-gold-500: #C48B38; --color-gold-600: #A8722B; --color-gold-700: #8A5C22;
+      --color-purple-50: #F5F2FC; --color-purple-100: #E8E0F7; --color-purple-200: #D1C0EF; --color-purple-300: #B59FE3;
+      --color-purple-400: #9B7FD4; --color-purple-500: #8266C4; --color-purple-600: #6A4FAD; --color-purple-700: #543D8C;
+      --color-blue-50: #F0F4FC; --color-blue-100: #DCE6F7; --color-blue-200: #B8CCEF; --color-blue-300: #8DADE3;
+      --color-blue-400: #5B8FD4; --color-blue-500: #4175C0; --color-blue-600: #335EA0; --color-blue-700: #284A80;
+      --color-bg: #F8F7F4; --color-surface: #FFFFFF; --color-border: #E8E5DF;
+      --color-text-primary: #1A1A1A; --color-text-secondary: #6B6B6B; --color-text-muted: #9B9B9B;
+      --color-success: #34D399; --color-warning: #FBBF24; --color-danger: #F87171;
+    }
+  </style>
+</head>
+<body class="bg-bg font-[Inter] antialiased">
+  <div class="max-w-[375px] mx-auto min-h-screen bg-bg relative flex flex-col">
+    <div class="page-content flex-1 flex flex-col pb-[140px]">
+
+      <div class="h-11"></div>
+
+      <div class="flex items-center justify-between px-5 pb-3">
+        <a href="coach.html" class="w-10 h-10 flex items-center justify-center -ml-2">
+          <i data-lucide="arrow-left" class="w-5 h-5 text-text-primary"></i>
+        </a>
+        <div class="flex items-center gap-2">
+          <i data-lucide="activity" class="w-4 h-4 text-warning"></i>
+          <h1 class="text-base font-bold text-text-primary">Biomarkers Coach</h1>
+        </div>
+        <div class="w-10"></div>
+      </div>
+
+      <!-- Stats hero -->
+      <div class="mx-4 mb-3 bg-white rounded-2xl p-5 border border-border/50 shadow-sm">
+        <div class="flex items-end justify-between mb-3">
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-wider text-text-muted">Last test</p>
+            <div class="flex items-baseline gap-1 mt-0.5">
+              <span class="text-xl font-extrabold text-text-primary">Feb 15, 2026</span>
+            </div>
+            <p class="text-[11px] text-warning mt-0.5">5 weeks ago · Due for update</p>
+          </div>
+          <button class="px-3 py-1.5 bg-gold-400 text-white text-[11px] font-bold rounded-lg btn-press">+ Upload</button>
+        </div>
+        <!-- Biomarker grid -->
+        <div class="grid grid-cols-3 gap-2 mb-3">
+          <div class="bg-bg rounded-xl p-2.5 text-center">
+            <p class="text-[10px] text-text-muted mb-0.5">Testosterone</p>
+            <p class="text-sm font-extrabold text-text-primary">18.5</p>
+            <p class="text-[9px] text-text-muted">nmol/L</p>
+            <div class="flex items-center justify-center gap-0.5 mt-1">
+              <i data-lucide="trending-up" class="w-3 h-3 text-success"></i>
+              <span class="text-[9px] font-semibold text-success">+2.1</span>
+            </div>
+          </div>
+          <div class="bg-bg rounded-xl p-2.5 text-center">
+            <p class="text-[10px] text-text-muted mb-0.5">Vitamin D</p>
+            <p class="text-sm font-extrabold text-text-primary">72</p>
+            <p class="text-[9px] text-text-muted">ng/mL</p>
+            <span class="inline-block mt-1 text-[9px] font-semibold text-success px-1.5 py-0.5 bg-success/10 rounded-full">Normal</span>
+          </div>
+          <div class="bg-bg rounded-xl p-2.5 text-center">
+            <p class="text-[10px] text-text-muted mb-0.5">Cortisol</p>
+            <p class="text-sm font-extrabold text-text-primary">22.4</p>
+            <p class="text-[9px] text-text-muted">µg/dL</p>
+            <span class="inline-block mt-1 text-[9px] font-semibold text-warning px-1.5 py-0.5 bg-warning/10 rounded-full">Watch</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-2">
+          <div class="bg-bg rounded-xl p-2.5 text-center">
+            <p class="text-[10px] text-text-muted mb-0.5">HbA1c</p>
+            <p class="text-sm font-extrabold text-text-primary">5.1</p>
+            <p class="text-[9px] text-text-muted">%</p>
+            <span class="inline-block mt-1 text-[9px] font-semibold text-success px-1.5 py-0.5 bg-success/10 rounded-full">Normal</span>
+          </div>
+          <div class="bg-bg rounded-xl p-2.5 text-center">
+            <p class="text-[10px] text-text-muted mb-0.5">LDL</p>
+            <p class="text-sm font-extrabold text-text-primary">108</p>
+            <p class="text-[9px] text-text-muted">mg/dL</p>
+            <span class="inline-block mt-1 text-[9px] font-semibold text-success px-1.5 py-0.5 bg-success/10 rounded-full">Optimal</span>
+          </div>
+          <div class="bg-bg rounded-xl p-2.5 text-center">
+            <p class="text-[10px] text-text-muted mb-0.5">Ferritin</p>
+            <p class="text-sm font-extrabold text-text-primary">142</p>
+            <p class="text-[9px] text-text-muted">ng/mL</p>
+            <span class="inline-block mt-1 text-[9px] font-semibold text-success px-1.5 py-0.5 bg-success/10 rounded-full">Good</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat -->
+      <div class="flex-1 px-4 space-y-3" data-chat-area>
+        <div class="flex items-start gap-2">
+          <div class="w-7 h-7 rounded-full bg-gradient-to-br from-warning to-danger flex items-center justify-center flex-shrink-0 shadow-sm">
+            <i data-lucide="activity" class="w-3.5 h-3.5 text-white"></i>
+          </div>
+          <div class="chat-bubble-coach px-4 py-3 max-w-[85%]">
+            <p class="text-sm text-text-primary leading-snug">Most of your markers look good, Alex. <strong>Testosterone is up +2.1</strong> (consistent with your training block). <strong>Cortisol at 22.4 µg/dL</strong> is on the higher end — likely stress-related. Want to deep-dive on that?</p>
+            <p class="text-[10px] text-text-muted mt-1.5">Feb 16</p>
+          </div>
+        </div>
+
+        <div class="flex justify-end">
+          <div class="chat-bubble-user px-4 py-3 max-w-[85%]">
+            <p class="text-sm leading-snug">Yes, what can I do to lower cortisol?</p>
+            <p class="text-[10px] text-white/70 mt-1.5">Feb 16</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-2">
+          <div class="w-7 h-7 rounded-full bg-gradient-to-br from-warning to-danger flex items-center justify-center flex-shrink-0 shadow-sm">
+            <i data-lucide="activity" class="w-3.5 h-3.5 text-white"></i>
+          </div>
+          <div class="chat-bubble-coach px-4 py-3 max-w-[85%]">
+            <p class="text-sm text-text-primary leading-snug mb-2">Three high-leverage moves based on your data:</p>
+            <div class="space-y-1.5">
+              <div class="bg-white rounded-lg p-2.5">
+                <p class="text-xs font-bold text-text-primary">1. Cap caffeine at 200mg/day</p>
+                <p class="text-[10px] text-text-muted">You're averaging 340mg — main driver</p>
+              </div>
+              <div class="bg-white rounded-lg p-2.5">
+                <p class="text-xs font-bold text-text-primary">2. Add evening wind-down</p>
+                <p class="text-[10px] text-text-muted">10 min breathwork before bed</p>
+              </div>
+              <div class="bg-white rounded-lg p-2.5">
+                <p class="text-xs font-bold text-text-primary">3. Deload week coming up</p>
+                <p class="text-[10px] text-text-muted">Volume is stacking stress</p>
+              </div>
+            </div>
+            <p class="text-[10px] text-text-muted mt-2">Feb 16</p>
+          </div>
+        </div>
+
+        <!-- Nudge to re-test -->
+        <div class="mx-1 mt-2 p-3 bg-warning/10 border border-warning/30 rounded-xl">
+          <div class="flex items-start gap-2">
+            <i data-lucide="info" class="w-4 h-4 text-warning mt-0.5 flex-shrink-0"></i>
+            <div class="flex-1">
+              <p class="text-xs font-bold text-text-primary">Re-test recommended</p>
+              <p class="text-[11px] text-text-muted mt-0.5">Your last bloodwork is 5 weeks old. Upload a new panel to unlock up-to-date insights.</p>
+              <button class="mt-2 text-[11px] font-bold text-purple-500">Upload results →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick actions + Input -->
+    <div class="fixed bottom-16 left-0 right-0 max-w-[375px] mx-auto bg-bg">
+      <div class="flex gap-2 overflow-x-auto hide-scrollbar px-4 py-2">
+        <button data-quick-chip class="chip-action flex-shrink-0 px-3 py-1.5 rounded-full border border-purple-200 bg-purple-50 text-purple-600 text-[11px] font-semibold">Explain my cortisol</button>
+        <button data-quick-chip class="chip-action flex-shrink-0 px-3 py-1.5 rounded-full border border-purple-200 bg-purple-50 text-purple-600 text-[11px] font-semibold">Lab recommendations</button>
+        <button data-quick-chip class="chip-action flex-shrink-0 px-3 py-1.5 rounded-full border border-purple-200 bg-purple-50 text-purple-600 text-[11px] font-semibold">Compare to last test</button>
+      </div>
+      <div class="px-4 pb-2">
+        <div class="flex items-center gap-2 bg-white rounded-full border border-border px-4 py-2 shadow-sm">
+          <input data-chat-input type="text" placeholder="Ask about your biomarkers…" class="flex-1 bg-transparent text-sm text-text-primary placeholder:text-text-muted focus:outline-none">
+          <button class="w-8 h-8 bg-gold-400 hover:bg-gold-500 rounded-full flex items-center justify-center btn-press transition-colors">
+            <i data-lucide="arrow-up" class="w-4 h-4 text-white"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="fixed bottom-0 left-0 right-0 max-w-[375px] mx-auto bg-white border-t border-border z-50">
+      <div class="flex justify-around items-center h-16 px-2">
+        <a href="dashboard.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="meals.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="utensils" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Energy In</span>
+        </a>
+        <a href="workout.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="dumbbell" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Energy Out</span>
+        </a>
+        <a href="coach.html" class="flex flex-col items-center gap-1 text-purple-500">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span class="text-[10px] font-semibold">Coach</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="user" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Profile</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

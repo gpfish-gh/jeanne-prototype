@@ -217,133 +217,19 @@
         </a>
       </div>
 
-      <!-- Sleep Summary Card -->
-      <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4 mx-4 mb-3 card-tap">
-        <a href="#" class="block">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2.5">
-              <div class="w-9 h-9 rounded-xl bg-purple-50 flex items-center justify-center">
-                <i data-lucide="moon" class="w-4.5 h-4.5 text-purple-500"></i>
-              </div>
-              <h3 class="font-semibold text-sm text-text-primary">Sleep Summary</h3>
-            </div>
-            <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted"></i>
+      <!-- Explore deeper insight nudge -->
+      <a href="coach.html" class="block mx-4 mb-3 p-4 bg-gradient-to-br from-purple-50 to-gold-50 border border-purple-200/50 rounded-2xl card-tap">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm flex-shrink-0">
+            <i data-lucide="sparkles" class="w-5 h-5 text-purple-500"></i>
           </div>
-          <!-- Sleep stats -->
-          <div class="flex items-end justify-between mb-3">
-            <div>
-              <span class="text-2xl font-bold text-text-primary">7h 23m</span>
-              <span class="text-xs text-text-muted ml-1">duration</span>
-            </div>
-            <div class="flex items-center gap-1.5 px-2.5 py-1 bg-success/10 rounded-lg">
-              <span class="text-sm font-bold text-success">85</span>
-              <span class="text-[10px] font-medium text-success">quality</span>
-            </div>
-          </div>
-          <!-- Sleep stages mini chart -->
-          <div class="flex items-end gap-1 h-12">
-            <div class="flex-1 flex flex-col items-center gap-0.5">
-              <div class="w-full bg-danger/30 rounded-sm sleep-bar" style="height: 8px; animation-delay: 0.1s"></div>
-              <span class="text-[9px] text-text-muted">Awake</span>
-            </div>
-            <div class="flex-1 flex flex-col items-center gap-0.5">
-              <div class="w-full bg-blue-300 rounded-sm sleep-bar" style="height: 20px; animation-delay: 0.2s"></div>
-              <span class="text-[9px] text-text-muted">REM</span>
-            </div>
-            <div class="flex-1 flex flex-col items-center gap-0.5">
-              <div class="w-full bg-purple-200 rounded-sm sleep-bar" style="height: 28px; animation-delay: 0.3s"></div>
-              <span class="text-[9px] text-text-muted">Light</span>
-            </div>
-            <div class="flex-1 flex flex-col items-center gap-0.5">
-              <div class="w-full bg-purple-500 rounded-sm sleep-bar" style="height: 22px; animation-delay: 0.4s"></div>
-              <span class="text-[9px] text-text-muted">Deep</span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Supplements Card -->
-      <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4 mx-4 mb-3">
-        <div class="flex items-center justify-between mb-3">
-          <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-success/10 flex items-center justify-center">
-              <i data-lucide="pill" class="w-4.5 h-4.5 text-success"></i>
-            </div>
-            <h3 class="font-semibold text-sm text-text-primary">Supplements</h3>
-          </div>
-        </div>
-        <div class="space-y-2.5">
-          <!-- Vitamin D -->
-          <div data-supplement class="flex items-center gap-3 cursor-pointer">
-            <div data-supp-check class="w-5 h-5 rounded-full border-2 border-border bg-white flex items-center justify-center flex-shrink-0 transition-colors">
-              <i data-lucide="check" data-supp-check-icon class="w-3 h-3 text-white hidden"></i>
-            </div>
-            <span class="text-sm text-text-primary flex-1">Vitamin D3</span>
-            <span class="text-xs text-text-muted bg-bg px-2 py-0.5 rounded-full">8:00 AM</span>
-          </div>
-          <!-- Omega-3 (pre-checked) -->
-          <div data-supplement class="flex items-center gap-3 cursor-pointer supplement-checked">
-            <div data-supp-check class="w-5 h-5 rounded-full border-2 border-success bg-success flex items-center justify-center flex-shrink-0 transition-colors">
-              <i data-lucide="check" data-supp-check-icon class="w-3 h-3 text-white"></i>
-            </div>
-            <span class="text-sm text-text-primary flex-1">Omega-3 Fish Oil</span>
-            <span class="text-xs text-text-muted bg-bg px-2 py-0.5 rounded-full">8:00 AM</span>
-          </div>
-          <!-- Creatine -->
-          <div data-supplement class="flex items-center gap-3 cursor-pointer">
-            <div data-supp-check class="w-5 h-5 rounded-full border-2 border-border bg-white flex items-center justify-center flex-shrink-0 transition-colors">
-              <i data-lucide="check" data-supp-check-icon class="w-3 h-3 text-white hidden"></i>
-            </div>
-            <span class="text-sm text-text-primary flex-1">Creatine Monohydrate</span>
-            <span class="text-xs text-text-muted bg-bg px-2 py-0.5 rounded-full">Pre-workout</span>
-          </div>
-          <!-- Magnesium -->
-          <div data-supplement class="flex items-center gap-3 cursor-pointer">
-            <div data-supp-check class="w-5 h-5 rounded-full border-2 border-border bg-white flex items-center justify-center flex-shrink-0 transition-colors">
-              <i data-lucide="check" data-supp-check-icon class="w-3 h-3 text-white hidden"></i>
-            </div>
-            <span class="text-sm text-text-primary flex-1">Magnesium Glycinate</span>
-            <span class="text-xs text-text-muted bg-bg px-2 py-0.5 rounded-full">9:00 PM</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Biomarker Highlights Card -->
-      <div class="bg-white rounded-2xl shadow-sm border border-border/50 p-4 mx-4 mb-3 card-tap">
-        <div class="flex items-center justify-between mb-3">
-          <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-danger/10 flex items-center justify-center">
-              <i data-lucide="activity" class="w-4.5 h-4.5 text-danger"></i>
-            </div>
-            <h3 class="font-semibold text-sm text-text-primary">Biomarkers</h3>
+          <div class="flex-1">
+            <p class="text-sm font-bold text-text-primary">Go deeper with Coach</p>
+            <p class="text-[11px] text-text-muted mt-0.5">Sleep, supplements, biomarkers &amp; more</p>
           </div>
           <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted"></i>
         </div>
-        <div class="grid grid-cols-3 gap-3">
-          <div class="text-center p-2 bg-bg rounded-xl">
-            <p class="text-xs text-text-muted mb-1">Testosterone</p>
-            <p class="text-sm font-bold text-text-primary">18.5</p>
-            <div class="flex items-center justify-center gap-0.5 mt-0.5">
-              <i data-lucide="trending-up" class="w-3 h-3 text-success"></i>
-              <span class="text-[10px] font-medium text-success">+2.1</span>
-            </div>
-          </div>
-          <div class="text-center p-2 bg-bg rounded-xl">
-            <p class="text-xs text-text-muted mb-1">Vitamin D</p>
-            <p class="text-sm font-bold text-text-primary">72</p>
-            <div class="flex items-center justify-center gap-0.5 mt-0.5">
-              <span class="text-[10px] font-medium text-success px-1.5 py-0.5 bg-success/10 rounded-full">Normal</span>
-            </div>
-          </div>
-          <div class="text-center p-2 bg-bg rounded-xl">
-            <p class="text-xs text-text-muted mb-1">Cortisol</p>
-            <p class="text-sm font-bold text-text-primary">22.4</p>
-            <div class="flex items-center justify-center gap-0.5 mt-0.5">
-              <span class="text-[10px] font-medium text-warning px-1.5 py-0.5 bg-warning/10 rounded-full">Watch</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      </a>
 
       <!-- Bottom spacer for nav -->
       <div class="h-4"></div>
