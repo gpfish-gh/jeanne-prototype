@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jeanné — Set Your Check-ins</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-gold-50: #FDF8F0; --color-gold-100: #F9EDDA; --color-gold-200: #F0D9B0; --color-gold-300: #E5C080;
+      --color-gold-400: #D4A053; --color-gold-500: #C48B38; --color-gold-600: #A8722B; --color-gold-700: #8A5C22;
+      --color-purple-50: #F5F2FC; --color-purple-100: #E8E0F7; --color-purple-200: #D1C0EF; --color-purple-300: #B59FE3;
+      --color-purple-400: #9B7FD4; --color-purple-500: #8266C4; --color-purple-600: #6A4FAD; --color-purple-700: #543D8C;
+      --color-blue-50: #F0F4FC; --color-blue-100: #DCE6F7; --color-blue-200: #B8CCEF; --color-blue-300: #8DADE3;
+      --color-blue-400: #5B8FD4; --color-blue-500: #4175C0; --color-blue-600: #335EA0; --color-blue-700: #284A80;
+      --color-bg: #F8F7F4; --color-surface: #FFFFFF; --color-border: #E8E5DF;
+      --color-text-primary: #1A1A1A; --color-text-secondary: #6B6B6B; --color-text-muted: #9B9B9B;
+      --color-success: #34D399; --color-warning: #FBBF24; --color-danger: #F87171;
+    }
+  </style>
+</head>
+<body class="bg-bg font-[Inter] antialiased">
+  <div class="max-w-[375px] mx-auto min-h-screen bg-bg relative flex flex-col">
+    <div class="page-content flex-1 flex flex-col">
+
+      <div class="h-11"></div>
+
+      <!-- Top bar -->
+      <div class="flex items-center justify-between px-5 mb-2">
+        <a href="onboarding-devices.html" class="w-10 h-10 flex items-center justify-center -ml-2">
+          <i data-lucide="arrow-left" class="w-5 h-5 text-text-primary"></i>
+        </a>
+        <div class="flex gap-1.5">
+          <div class="w-8 h-1 rounded-full bg-gold-400"></div>
+          <div class="w-8 h-1 rounded-full bg-gold-400"></div>
+          <div class="w-8 h-1 rounded-full bg-gold-400"></div>
+          <div class="w-8 h-1 rounded-full bg-gold-400"></div>
+          <div class="w-8 h-1 rounded-full bg-border"></div>
+        </div>
+        <div class="w-10"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="px-5 pt-4 flex-1 overflow-y-auto">
+        <h1 class="text-2xl font-bold text-text-primary mb-2">Build your rhythm</h1>
+        <p class="text-sm text-text-secondary mb-6">Two moments to keep Jeanné tuned to you.</p>
+
+        <!-- Daily reflection card -->
+        <div class="bg-white rounded-2xl border border-border/50 p-4 mb-4">
+          <div class="flex items-center gap-2.5 mb-1">
+            <div class="w-9 h-9 rounded-xl bg-purple-50 flex items-center justify-center">
+              <i data-lucide="moon" class="w-4.5 h-4.5 text-purple-500"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-text-primary leading-tight">Daily reflection</h3>
+              <p class="text-[11px] text-text-muted leading-tight">When works best for you?</p>
+            </div>
+          </div>
+
+          <!-- Morning / Evening segmented control -->
+          <div class="flex gap-1.5 mt-4 mb-3">
+            <button data-daily-when="morning" class="flex-1 py-2.5 bg-white text-text-muted border border-border rounded-xl text-xs font-medium transition-all">
+              🌅 Morning
+            </button>
+            <button data-daily-when="evening" class="flex-1 py-2.5 bg-gold-400 text-white border border-gold-400 rounded-xl text-xs font-semibold transition-all">
+              🌙 Evening
+            </button>
+          </div>
+
+          <!-- Time -->
+          <label class="text-[10px] font-semibold uppercase tracking-wider text-text-muted">Time</label>
+          <div class="mt-1 flex items-center gap-2 bg-bg rounded-xl px-3 py-2.5">
+            <i data-lucide="clock" class="w-4 h-4 text-text-muted"></i>
+            <input data-daily-time type="text" value="9:00 PM" class="flex-1 bg-transparent text-sm font-semibold text-text-primary focus:outline-none">
+          </div>
+        </div>
+
+        <!-- Weekly check-in card -->
+        <div class="bg-white rounded-2xl border border-border/50 p-4 mb-4">
+          <div class="flex items-center gap-2.5 mb-1">
+            <div class="w-9 h-9 rounded-xl bg-purple-50 flex items-center justify-center">
+              <i data-lucide="calendar-check" class="w-4.5 h-4.5 text-purple-500"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-text-primary leading-tight">Weekly planning</h3>
+              <p class="text-[11px] text-text-muted leading-tight">When you plan your week ahead.</p>
+            </div>
+          </div>
+
+          <!-- Day chips -->
+          <label class="text-[10px] font-semibold uppercase tracking-wider text-text-muted mt-4 mb-2 block">Day</label>
+          <div class="grid grid-cols-7 gap-1.5 mb-3">
+            <button data-weekly-day="sun" class="py-2.5 rounded-xl border-2 border-gold-400 bg-gold-50 text-gold-700 text-xs font-bold">S</button>
+            <button data-weekly-day="mon" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">M</button>
+            <button data-weekly-day="tue" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">T</button>
+            <button data-weekly-day="wed" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">W</button>
+            <button data-weekly-day="thu" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">T</button>
+            <button data-weekly-day="fri" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">F</button>
+            <button data-weekly-day="sat" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">S</button>
+          </div>
+
+          <!-- Time -->
+          <label class="text-[10px] font-semibold uppercase tracking-wider text-text-muted">Time</label>
+          <div class="mt-1 flex items-center gap-2 bg-bg rounded-xl px-3 py-2.5">
+            <i data-lucide="clock" class="w-4 h-4 text-text-muted"></i>
+            <input data-weekly-time type="text" value="8:00 PM" class="flex-1 bg-transparent text-sm font-semibold text-text-primary focus:outline-none">
+          </div>
+        </div>
+
+        <p class="text-[11px] text-text-muted text-center px-2 mb-6">
+          You can change these any time in <span class="font-semibold text-text-secondary">Profile · Settings</span>.
+        </p>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="px-5 py-6">
+        <a href="onboarding-ready.html" class="btn-press block w-full py-4 bg-gold-400 hover:bg-gold-500 text-white font-bold text-base rounded-xl transition-colors shadow-sm text-center">
+          Continue
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    // Morning / Evening toggle
+    document.querySelectorAll('[data-daily-when]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-daily-when]').forEach(b => {
+          b.classList.remove('bg-gold-400', 'text-white', 'font-semibold', 'border-gold-400');
+          b.classList.add('bg-white', 'text-text-muted', 'font-medium', 'border', 'border-border');
+        });
+        btn.classList.remove('bg-white', 'text-text-muted', 'font-medium', 'border', 'border-border');
+        btn.classList.add('bg-gold-400', 'text-white', 'font-semibold', 'border-gold-400');
+        // Update default time
+        const input = document.querySelector('[data-daily-time]');
+        if (input) input.value = btn.dataset.dailyWhen === 'morning' ? '7:00 AM' : '9:00 PM';
+      });
+    });
+
+    // Weekly day single-select
+    document.querySelectorAll('[data-weekly-day]').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('[data-weekly-day]').forEach(c => {
+          c.classList.remove('border-2', 'border-gold-400', 'bg-gold-50', 'text-gold-700');
+          c.classList.add('border', 'border-border', 'bg-white', 'text-text-muted');
+        });
+        chip.classList.remove('border', 'border-border', 'bg-white', 'text-text-muted');
+        chip.classList.add('border-2', 'border-gold-400', 'bg-gold-50', 'text-gold-700');
+      });
+    });
+  </script>
+</body>
+</html>
