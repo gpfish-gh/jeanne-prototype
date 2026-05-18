@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jeanné — Weekly Check-in</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-gold-50: #FDF8F0; --color-gold-100: #F9EDDA; --color-gold-200: #F0D9B0; --color-gold-300: #E5C080;
+      --color-gold-400: #D4A053; --color-gold-500: #C48B38; --color-gold-600: #A8722B; --color-gold-700: #8A5C22;
+      --color-purple-50: #F5F2FC; --color-purple-100: #E8E0F7; --color-purple-200: #D1C0EF; --color-purple-300: #B59FE3;
+      --color-purple-400: #9B7FD4; --color-purple-500: #8266C4; --color-purple-600: #6A4FAD; --color-purple-700: #543D8C;
+      --color-blue-50: #F0F4FC; --color-blue-100: #DCE6F7; --color-blue-200: #B8CCEF; --color-blue-300: #8DADE3;
+      --color-blue-400: #5B8FD4; --color-blue-500: #4175C0; --color-blue-600: #335EA0; --color-blue-700: #284A80;
+      --color-bg: #F8F7F4; --color-surface: #FFFFFF; --color-border: #E8E5DF;
+      --color-text-primary: #1A1A1A; --color-text-secondary: #6B6B6B; --color-text-muted: #9B9B9B;
+      --color-success: #34D399; --color-warning: #FBBF24; --color-danger: #F87171;
+    }
+  </style>
+</head>
+<body class="bg-bg font-[Inter] antialiased">
+  <div class="max-w-[375px] mx-auto min-h-screen bg-bg relative flex flex-col">
+
+    <!-- Status bar spacer -->
+    <div class="h-11"></div>
+
+    <!-- Top bar with back + progress dots -->
+    <div class="flex items-center justify-between px-5 pb-2">
+      <a href="coach-weekly.html" data-checkin-back class="w-10 h-10 flex items-center justify-center -ml-2">
+        <i data-lucide="x" class="w-5 h-5 text-text-primary"></i>
+      </a>
+      <div data-progress-dots class="flex gap-1.5">
+        <div class="w-2 h-2 rounded-full bg-gold-400" data-dot="1"></div>
+        <div class="w-2 h-2 rounded-full bg-border" data-dot="2"></div>
+        <div class="w-2 h-2 rounded-full bg-border" data-dot="3"></div>
+        <div class="w-2 h-2 rounded-full bg-border" data-dot="4"></div>
+      </div>
+      <div class="w-10"></div>
+    </div>
+
+    <!-- ===== STEP 1: Welcome ===== -->
+    <div data-checkin-step="1" class="flex-1 flex flex-col page-content">
+      <div class="flex-1 flex flex-col items-center justify-center px-8 text-center">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center shadow-lg mb-8">
+          <i data-lucide="sparkles" class="w-8 h-8 text-white"></i>
+        </div>
+        <p class="text-[11px] font-semibold uppercase tracking-widest text-text-muted mb-3">Sunday · March 23 · 7:54 PM</p>
+        <h1 class="text-3xl font-extrabold text-text-primary leading-tight mb-3">Let's plan your week, Alex.</h1>
+        <p class="text-base text-text-secondary leading-relaxed">2 minutes. Future-you will thank you.</p>
+      </div>
+      <div class="px-5 pb-8">
+        <button data-checkin-next class="btn-press block w-full py-4 bg-gold-400 hover:bg-gold-500 text-white font-bold text-base rounded-xl transition-colors shadow-sm text-center">
+          Begin
+          <i data-lucide="arrow-right" class="w-4 h-4 inline-block -mt-0.5 ml-1"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 2: Travel ===== -->
+    <div data-checkin-step="2" class="flex-1 flex-col hidden">
+      <div class="flex-1 px-5 pt-4 pb-4">
+        <p class="text-[11px] font-semibold uppercase tracking-widest text-text-muted mb-2">Step 2 · Travel</p>
+        <h1 class="text-2xl font-extrabold text-text-primary leading-tight mb-1">Any travel this week?</h1>
+        <p class="text-sm text-text-secondary mb-6">I'll find restaurants &amp; adapt your meals.</p>
+
+        <!-- Toggle -->
+        <div class="bg-white rounded-xl border border-border/50 p-1 flex mb-5">
+          <button data-travel-toggle="none" class="flex-1 py-2.5 rounded-lg text-sm font-semibold text-text-muted transition-all">
+            No travel
+          </button>
+          <button data-travel-toggle="some" class="flex-1 py-2.5 rounded-lg text-sm font-bold bg-purple-500 text-white transition-all">
+            Some travel
+          </button>
+        </div>
+
+        <!-- Day chips -->
+        <p class="text-[11px] font-semibold uppercase tracking-wider text-text-muted mb-2">Which days?</p>
+        <div class="grid grid-cols-7 gap-1.5 mb-5">
+          <button data-day-chip="mon" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">M</button>
+          <button data-day-chip="tue" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">T</button>
+          <button data-day-chip="wed" class="py-2.5 rounded-xl border-2 border-gold-400 bg-gold-50 text-gold-700 text-xs font-bold">W</button>
+          <button data-day-chip="thu" class="py-2.5 rounded-xl border-2 border-gold-400 bg-gold-50 text-gold-700 text-xs font-bold">T</button>
+          <button data-day-chip="fri" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">F</button>
+          <button data-day-chip="sat" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">S</button>
+          <button data-day-chip="sun" class="py-2.5 rounded-xl border border-border bg-white text-text-muted text-xs font-bold">S</button>
+        </div>
+
+        <!-- Location input -->
+        <div class="bg-white rounded-2xl border border-border/50 p-4">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-text-muted mb-2">Wed 26 – Thu 27</p>
+          <div class="flex items-center gap-2 bg-bg rounded-xl px-3 py-3">
+            <i data-lucide="map-pin" class="w-4 h-4 text-purple-500"></i>
+            <input type="text" value="Sydney" class="flex-1 bg-transparent text-sm font-semibold text-text-primary focus:outline-none">
+          </div>
+          <p class="text-[10px] text-text-muted mt-2">I'll suggest meals near your hotel &amp; meetings.</p>
+        </div>
+      </div>
+      <div class="px-5 pb-8">
+        <button data-checkin-next class="btn-press block w-full py-4 bg-gold-400 hover:bg-gold-500 text-white font-bold text-base rounded-xl transition-colors shadow-sm text-center">
+          Continue
+          <i data-lucide="arrow-right" class="w-4 h-4 inline-block -mt-0.5 ml-1"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 3: Equipment ===== -->
+    <div data-checkin-step="3" class="flex-1 flex-col hidden">
+      <div class="flex-1 px-5 pt-4 pb-4 overflow-y-auto">
+        <p class="text-[11px] font-semibold uppercase tracking-widest text-text-muted mb-2">Step 3 · Equipment</p>
+        <h1 class="text-2xl font-extrabold text-text-primary leading-tight mb-1">Where will you train?</h1>
+        <p class="text-sm text-text-secondary mb-6">I'll adapt each session to your equipment.</p>
+
+        <div class="space-y-2">
+          <!-- Mon -->
+          <div class="bg-white rounded-xl border border-border/50 p-3 flex items-center gap-3">
+            <div class="w-10 text-center">
+              <p class="text-[9px] font-bold uppercase tracking-wider text-text-muted">Mon</p>
+              <p class="text-sm font-extrabold text-text-primary leading-none">24</p>
+            </div>
+            <div class="flex-1 relative">
+              <select class="w-full bg-bg rounded-lg px-3 py-2.5 text-sm font-semibold text-text-primary appearance-none focus:outline-none">
+                <option selected>🏋 Full gym</option>
+                <option>🏠 Home gym</option>
+                <option>🏨 Hotel gym</option>
+                <option>🌳 Outdoor</option>
+                <option>💤 Rest</option>
+              </select>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-text-muted absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            </div>
+          </div>
+          <!-- Tue -->
+          <div class="bg-white rounded-xl border border-border/50 p-3 flex items-center gap-3">
+            <div class="w-10 text-center">
+              <p class="text-[9px] font-bold uppercase tracking-wider text-text-muted">Tue</p>
+              <p class="text-sm font-extrabold text-text-primary leading-none">25</p>
+            </div>
+            <div class="flex-1 relative">
+              <select class="w-full bg-bg rounded-lg px-3 py-2.5 text-sm font-semibold text-text-primary appearance-none focus:outline-none">
+                <option>🏋 Full gym</option>
+                <option selected>🏠 Home gym</option>
+                <option>🏨 Hotel gym</option>
+                <option>🌳 Outdoor</option>
+                <option>💤 Rest</option>
+              </select>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-text-muted absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            </div>
+          </div>
+          <!-- Wed (travel) -->
+          <div class="bg-purple-50 rounded-xl border-2 border-purple-200 p-3 flex items-center gap-3">
+            <div class="w-10 text-center">
+              <p class="text-[9px] font-bold uppercase tracking-wider text-purple-500">Wed</p>
+              <p class="text-sm font-extrabold text-text-primary leading-none">26</p>
+            </div>
+            <div class="flex-1 relative">
+              <select class="w-full bg-white rounded-lg px-3 py-2.5 text-sm font-semibold text-text-primary appearance-none focus:outline-none">
+                <option>🏋 Full gym</option>
+                <option>🏠 Home gym</option>
+                <option selected>🏨 Hotel gym</option>
+                <option>🌳 Outdoor</option>
+                <option>💤 Rest</option>
+              </select>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-text-muted absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            </div>
+          </div>
+          <!-- Thu (travel) -->
+          <div class="bg-purple-50 rounded-xl border-2 border-purple-200 p-3 flex items-center gap-3">
+            <div class="w-10 text-center">
+              <p class="text-[9px] font-bold uppercase tracking-wider text-purple-500">Thu</p>
+              <p class="text-sm font-extrabold text-text-primary leading-none">27</p>
+            </div>
+            <div class="flex-1 relative">
+              <select class="w-full bg-white rounded-lg px-3 py-2.5 text-sm font-semibold text-text-primary appearance-none focus:outline-none">
+                <option>🏋 Full gym</option>
+                <option>🏠 Home gym</option>
+                <option selected>🏨 Hotel gym</option>
+                <option>🌳 Outdoor</option>
+                <option>💤 Rest</option>
+              </select>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-text-muted absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            </div>
+          </div>
+          <!-- Fri -->
+          <div class="bg-white rounded-xl border border-border/50 p-3 flex items-center gap-3">
+            <div class="w-10 text-center">
+              <p class="text-[9px] font-bold uppercase tracking-wider text-text-muted">Fri</p>
+              <p class="text-sm font-extrabold text-text-primary leading-none">28</p>
+            </div>
+            <div class="flex-1 relative">
+              <select class="w-full bg-bg rounded-lg px-3 py-2.5 text-sm font-semibold text-text-primary appearance-none focus:outline-none">
+                <option selected>🏋 Full gym</option>
+                <option>🏠 Home gym</option>
+                <option>🏨 Hotel gym</option>
+                <option>🌳 Outdoor</option>
+                <option>💤 Rest</option>
+              </select>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-text-muted absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            </div>
+          </div>
+          <!-- Sat -->
+          <div class="bg-white rounded-xl border border-border/50 p-3 flex items-center gap-3">
+            <div class="w-10 text-center">
+              <p class="text-[9px] font-bold uppercase tracking-wider text-text-muted">Sat</p>
+              <p class="text-sm font-extrabold text-text-primary leading-none">29</p>
+            </div>
+            <div class="flex-1 relative">
+              <select class="w-full bg-bg rounded-lg px-3 py-2.5 text-sm font-semibold text-text-primary appearance-none focus:outline-none">
+                <option selected>🏋 Full gym</option>
+                <option>🏠 Home gym</option>
+                <option>🏨 Hotel gym</option>
+                <option>🌳 Outdoor</option>
+                <option>💤 Rest</option>
+              </select>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-text-muted absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            </div>
+          </div>
+          <!-- Sun -->
+          <div class="bg-white rounded-xl border border-border/50 p-3 flex items-center gap-3">
+            <div class="w-10 text-center">
+              <p class="text-[9px] font-bold uppercase tracking-wider text-text-muted">Sun</p>
+              <p class="text-sm font-extrabold text-text-primary leading-none">30</p>
+            </div>
+            <div class="flex-1 relative">
+              <select class="w-full bg-bg rounded-lg px-3 py-2.5 text-sm font-semibold text-text-primary appearance-none focus:outline-none">
+                <option>🏋 Full gym</option>
+                <option>🏠 Home gym</option>
+                <option>🏨 Hotel gym</option>
+                <option>🌳 Outdoor</option>
+                <option selected>💤 Rest</option>
+              </select>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-text-muted absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-5 pb-8">
+        <button data-checkin-next class="btn-press block w-full py-4 bg-gold-400 hover:bg-gold-500 text-white font-bold text-base rounded-xl transition-colors shadow-sm text-center">
+          Continue
+          <i data-lucide="arrow-right" class="w-4 h-4 inline-block -mt-0.5 ml-1"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 4: Preview ===== -->
+    <div data-checkin-step="4" class="flex-1 flex-col hidden">
+      <div class="flex-1 px-5 pt-4 pb-4 overflow-y-auto">
+        <p class="text-[11px] font-semibold uppercase tracking-widest text-text-muted mb-2">Step 4 · Confirm</p>
+        <h1 class="text-2xl font-extrabold text-text-primary leading-tight mb-1">Your week is ready.</h1>
+        <p class="text-sm text-text-secondary mb-5">Tap any day to tweak later.</p>
+
+        <!-- Compact preview list -->
+        <div class="space-y-1.5">
+          <div class="bg-white rounded-xl border border-border/50 p-3">
+            <div class="flex items-center justify-between mb-0.5">
+              <p class="text-[11px] font-bold text-text-primary">MON 24 · Home</p>
+              <span class="text-[10px] text-text-muted">Upper · 55m</span>
+            </div>
+            <p class="text-[11px] text-text-secondary leading-tight">Yogurt bowl · Chicken quinoa · Salmon</p>
+          </div>
+          <div class="bg-white rounded-xl border border-border/50 p-3">
+            <div class="flex items-center justify-between mb-0.5">
+              <p class="text-[11px] font-bold text-text-primary">TUE 25 · Home</p>
+              <span class="text-[10px] text-text-muted">HIIT · 30m</span>
+            </div>
+            <p class="text-[11px] text-text-secondary leading-tight">Oats &amp; berries · Tuna poke · Stir-fry</p>
+          </div>
+          <div class="bg-purple-50 rounded-xl border-2 border-purple-200 p-3">
+            <div class="flex items-center justify-between mb-0.5">
+              <p class="text-[11px] font-bold text-purple-700">WED 26 · ✈ Sydney</p>
+              <span class="text-[10px] text-text-muted">Mobility · 35m</span>
+            </div>
+            <p class="text-[11px] text-text-secondary leading-tight">Hotel eggs · Bills grain bowl · Da Mario steak</p>
+          </div>
+          <div class="bg-purple-50 rounded-xl border-2 border-purple-200 p-3">
+            <div class="flex items-center justify-between mb-0.5">
+              <p class="text-[11px] font-bold text-purple-700">THU 27 · ✈ Sydney</p>
+              <span class="text-[10px] text-text-muted">Push hotel · 40m</span>
+            </div>
+            <p class="text-[11px] text-text-secondary leading-tight">Hotel yogurt · Salmon plate · Chicken &amp; greens</p>
+          </div>
+          <div class="bg-white rounded-xl border border-border/50 p-3">
+            <div class="flex items-center justify-between mb-0.5">
+              <p class="text-[11px] font-bold text-text-primary">FRI 28 · Home</p>
+              <span class="text-[10px] text-text-muted">Pull · 50m</span>
+            </div>
+            <p class="text-[11px] text-text-secondary leading-tight">Smoothie · Beef quinoa · Cod &amp; veg</p>
+          </div>
+          <div class="bg-white rounded-xl border border-border/50 p-3">
+            <div class="flex items-center justify-between mb-0.5">
+              <p class="text-[11px] font-bold text-text-primary">SAT 29 · Home</p>
+              <span class="text-[10px] text-text-muted">Legs · 60m</span>
+            </div>
+            <p class="text-[11px] text-text-secondary leading-tight">Eggs benedict · Roast chicken · Date night</p>
+          </div>
+          <div class="bg-white rounded-xl border border-border/50 p-3">
+            <div class="flex items-center justify-between mb-0.5">
+              <p class="text-[11px] font-bold text-text-primary">SUN 30 · Home</p>
+              <span class="text-[10px] text-text-muted">Recovery · 30m</span>
+            </div>
+            <p class="text-[11px] text-text-secondary leading-tight">Pancakes · Tuna wrap · Lamb &amp; greens</p>
+          </div>
+        </div>
+
+        <!-- Edit link -->
+        <button data-checkin-back-to="2" class="block w-full text-center text-sm font-semibold text-purple-500 mt-4 mb-2">
+          ← Edit details
+        </button>
+      </div>
+      <div class="px-5 pb-8">
+        <a href="coach-weekly.html" class="btn-press block w-full py-4 bg-gold-400 hover:bg-gold-500 text-white font-bold text-base rounded-xl transition-colors shadow-sm text-center">
+          <i data-lucide="check" class="w-4 h-4 inline-block -mt-0.5 mr-1"></i>
+          Confirm plan
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    // ---- Check-in step navigation ----
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    function showStep(n) {
+      currentStep = n;
+      document.querySelectorAll('[data-checkin-step]').forEach(el => {
+        const isActive = parseInt(el.dataset.checkinStep, 10) === n;
+        el.classList.toggle('hidden', !isActive);
+        el.classList.toggle('flex', isActive);
+      });
+      // Progress dots
+      document.querySelectorAll('[data-dot]').forEach(dot => {
+        const i = parseInt(dot.dataset.dot, 10);
+        dot.classList.toggle('bg-gold-400', i === n);
+        dot.classList.toggle('bg-border', i !== n);
+      });
+      // Back button behaviour
+      const backBtn = document.querySelector('[data-checkin-back]');
+      if (n === 1) {
+        backBtn.setAttribute('href', 'coach-weekly.html');
+        backBtn.querySelector('i').setAttribute('data-lucide', 'x');
+      } else {
+        backBtn.removeAttribute('href');
+        backBtn.querySelector('i').setAttribute('data-lucide', 'arrow-left');
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    document.querySelectorAll('[data-checkin-next]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (currentStep < totalSteps) showStep(currentStep + 1);
+      });
+    });
+
+    document.querySelector('[data-checkin-back]').addEventListener('click', e => {
+      if (currentStep > 1) {
+        e.preventDefault();
+        showStep(currentStep - 1);
+      }
+    });
+
+    document.querySelectorAll('[data-checkin-back-to]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showStep(parseInt(btn.dataset.checkinBackTo, 10));
+      });
+    });
+
+    // Travel toggle
+    document.querySelectorAll('[data-travel-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-travel-toggle]').forEach(b => {
+          b.classList.remove('bg-purple-500', 'text-white', 'font-bold');
+          b.classList.add('text-text-muted', 'font-semibold');
+        });
+        btn.classList.remove('text-text-muted', 'font-semibold');
+        btn.classList.add('bg-purple-500', 'text-white', 'font-bold');
+      });
+    });
+
+    // Day chip selection
+    document.querySelectorAll('[data-day-chip]').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const isSelected = chip.classList.contains('border-gold-400');
+        if (isSelected) {
+          chip.classList.remove('border-2', 'border-gold-400', 'bg-gold-50', 'text-gold-700');
+          chip.classList.add('border', 'border-border', 'bg-white', 'text-text-muted');
+        } else {
+          chip.classList.remove('border', 'border-border', 'bg-white', 'text-text-muted');
+          chip.classList.add('border-2', 'border-gold-400', 'bg-gold-50', 'text-gold-700');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
