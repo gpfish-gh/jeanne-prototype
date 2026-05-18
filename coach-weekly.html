@@ -444,6 +444,13 @@
     };
     wireDayCards('[data-weekly-panel="in"]', 'coach-weekly-meals-day.html', 'coach-weekly-meals-travel.html');
     wireDayCards('[data-weekly-panel="out"]', 'coach-weekly-workout-day.html', 'coach-weekly-workout-travel.html');
+
+    // Restore the previously active tab when returning via #out / #in hash
+    const initialTab = window.location.hash === '#out' ? 'out' : 'in';
+    if (initialTab === 'out') {
+      const outBtn = document.querySelector('[data-weekly-tab="out"]');
+      if (outBtn) outBtn.click();
+    }
   </script>
 </body>
 </html>
