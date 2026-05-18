@@ -67,16 +67,33 @@
         </a>
       </div>
 
-      <!-- Adaptation hero banner -->
-      <a href="coach-daily-brief.html" class="mx-4 mt-3 mb-1 flex items-center gap-3 px-4 py-3 bg-purple-50 border-2 border-purple-200 rounded-2xl card-tap">
-        <div class="w-9 h-9 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
-          <i data-lucide="sparkles" class="w-4.5 h-4.5 text-purple-500"></i>
+      <!-- Daily Brief tile (with adaptation flag) -->
+      <a href="coach-daily-brief.html" class="mx-4 mt-3 mb-2 flex items-center gap-3 px-4 py-3 bg-white border border-border/50 rounded-2xl card-tap shadow-sm">
+        <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center flex-shrink-0">
+          <i data-lucide="sparkles" class="w-5 h-5 text-purple-500"></i>
         </div>
         <div class="flex-1 min-w-0">
-          <p class="text-[11px] font-bold uppercase tracking-wider text-purple-700">Today's plan adapted</p>
-          <p class="text-[12px] text-text-secondary leading-snug mt-0.5">Reflection said <em>drained</em> · HRV down 8 ms · workout lightened</p>
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <p class="text-sm font-bold text-text-primary leading-tight">Daily Brief</p>
+            <span class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-purple-50 text-purple-700 text-[9px] font-bold rounded-full uppercase tracking-wider">
+              <i data-lucide="sparkles" class="w-2 h-2"></i> Adaptation recommended
+            </span>
+          </div>
+          <p class="text-[11px] text-text-muted leading-snug mt-0.5">Reflection said <em>drained</em> · HRV down 8 ms</p>
         </div>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-purple-400 flex-shrink-0"></i>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted flex-shrink-0"></i>
+      </a>
+
+      <!-- Evening Reflection tile -->
+      <a href="coach-daily-reflection.html" class="mx-4 mb-1 flex items-center gap-3 px-4 py-3 bg-white border border-border/50 rounded-2xl card-tap shadow-sm">
+        <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center flex-shrink-0">
+          <i data-lucide="moon" class="w-5 h-5 text-purple-500"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-bold text-text-primary leading-tight">Evening Reflection</p>
+          <p class="text-[11px] text-text-muted leading-snug mt-0.5">30 seconds · Tunes tomorrow's plan</p>
+        </div>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted flex-shrink-0"></i>
       </a>
 
       <!-- Energy Balance Barometer -->
@@ -108,7 +125,6 @@
             <span class="text-sm font-semibold text-text-secondary">kcal/day</span>
           </div>
           <p class="text-[11px] text-text-muted mt-1">Target: −500 kcal/day</p>
-          <a href="coach-daily-brief.html" class="mt-3 text-[12px] font-semibold text-purple-500">View Daily Brief →</a>
         </div>
       </div>
 
@@ -246,34 +262,6 @@
           </p>
         </div>
       </div>
-
-      <!-- Reflect on today -->
-      <a href="coach-daily-reflection.html" class="block mx-4 mb-3 p-4 bg-white border border-border/50 rounded-2xl card-tap shadow-sm">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center flex-shrink-0">
-            <i data-lucide="moon" class="w-5 h-5 text-purple-500"></i>
-          </div>
-          <div class="flex-1">
-            <p class="text-sm font-bold text-text-primary">Reflect on today</p>
-            <p class="text-[11px] text-text-muted mt-0.5">30 seconds · Tunes tomorrow's plan</p>
-          </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted"></i>
-        </div>
-      </a>
-
-      <!-- Explore deeper insight nudge -->
-      <a href="coach.html" class="block mx-4 mb-3 p-4 bg-gradient-to-br from-purple-50 to-gold-50 border border-purple-200/50 rounded-2xl card-tap">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm flex-shrink-0">
-            <i data-lucide="sparkles" class="w-5 h-5 text-purple-500"></i>
-          </div>
-          <div class="flex-1">
-            <p class="text-sm font-bold text-text-primary">Go deeper with Coach</p>
-            <p class="text-[11px] text-text-muted mt-0.5">Sleep, supplements, biomarkers &amp; more</p>
-          </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted"></i>
-        </div>
-      </a>
 
       <!-- Bottom spacer for nav -->
       <div class="h-4"></div>
