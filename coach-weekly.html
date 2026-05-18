@@ -80,6 +80,18 @@
         </button>
       </div>
 
+      <!-- Shopping list CTA (Energy In only) -->
+      <a data-shopping-cta href="coach-weekly-shopping.html" class="mx-4 mb-3 flex items-center gap-3 px-4 py-3 bg-white rounded-2xl border border-border/50 card-tap shadow-sm">
+        <div class="w-9 h-9 rounded-xl bg-success/10 flex items-center justify-center">
+          <i data-lucide="shopping-basket" class="w-4.5 h-4.5 text-success"></i>
+        </div>
+        <div class="flex-1">
+          <p class="text-sm font-bold text-text-primary leading-tight">View weekly shopping list</p>
+          <p class="text-[11px] text-text-muted leading-tight mt-0.5">28 items · For 5 home days</p>
+        </div>
+        <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted"></i>
+      </a>
+
       <!-- ENERGY IN: Day list -->
       <div data-weekly-panel="in" class="px-4 space-y-2.5">
 
@@ -414,8 +426,24 @@
         document.querySelectorAll('[data-weekly-panel]').forEach(panel => {
           panel.classList.toggle('hidden', panel.dataset.weeklyPanel !== target);
         });
+        // Shopping CTA only shows on Energy In
+        const shoppingCta = document.querySelector('[data-shopping-cta]');
+        if (shoppingCta) shoppingCta.classList.toggle('hidden', target !== 'in');
       });
     });
+
+    // Day-card click navigation (avoids rewriting every card as an anchor)
+    const wireDayCards = (panelSelector, normalHref, travelHref) => {
+      document.querySelectorAll(`${panelSelector} > div`).forEach((card, idx) => {
+        const isTravel = idx === 2 || idx === 3; // Wed (idx 2), Thu (idx 3)
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+          window.location.href = isTravel ? travelHref : normalHref;
+        });
+      });
+    };
+    wireDayCards('[data-weekly-panel="in"]', 'coach-weekly-meals-day.html', 'coach-weekly-meals-travel.html');
+    wireDayCards('[data-weekly-panel="out"]', 'coach-weekly-workout-day.html', 'coach-weekly-workout-travel.html');
   </script>
 </body>
 </html>

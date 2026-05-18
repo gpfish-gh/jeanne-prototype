@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jeanné — Shopping List</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-gold-50: #FDF8F0; --color-gold-100: #F9EDDA; --color-gold-200: #F0D9B0; --color-gold-300: #E5C080;
+      --color-gold-400: #D4A053; --color-gold-500: #C48B38; --color-gold-600: #A8722B; --color-gold-700: #8A5C22;
+      --color-purple-50: #F5F2FC; --color-purple-100: #E8E0F7; --color-purple-200: #D1C0EF; --color-purple-300: #B59FE3;
+      --color-purple-400: #9B7FD4; --color-purple-500: #8266C4; --color-purple-600: #6A4FAD; --color-purple-700: #543D8C;
+      --color-blue-50: #F0F4FC; --color-blue-100: #DCE6F7; --color-blue-200: #B8CCEF; --color-blue-300: #8DADE3;
+      --color-blue-400: #5B8FD4; --color-blue-500: #4175C0; --color-blue-600: #335EA0; --color-blue-700: #284A80;
+      --color-bg: #F8F7F4; --color-surface: #FFFFFF; --color-border: #E8E5DF;
+      --color-text-primary: #1A1A1A; --color-text-secondary: #6B6B6B; --color-text-muted: #9B9B9B;
+      --color-success: #34D399; --color-warning: #FBBF24; --color-danger: #F87171;
+    }
+  </style>
+</head>
+<body class="bg-bg font-[Inter] antialiased">
+  <div class="max-w-[375px] mx-auto min-h-screen bg-bg relative">
+    <div class="page-content safe-bottom">
+
+      <div class="h-11"></div>
+
+      <!-- Header -->
+      <div class="flex items-center justify-between px-5 pb-3">
+        <a href="coach-weekly.html" class="w-10 h-10 flex items-center justify-center -ml-2">
+          <i data-lucide="arrow-left" class="w-5 h-5 text-text-primary"></i>
+        </a>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Week Mar 24 – 30</p>
+          <h1 class="text-base font-bold text-text-primary leading-tight">Shopping List</h1>
+        </div>
+        <button class="w-10 h-10 flex items-center justify-center -mr-2">
+          <i data-lucide="share-2" class="w-5 h-5 text-text-muted"></i>
+        </button>
+      </div>
+
+      <!-- Summary strip -->
+      <div class="mx-4 mb-4 bg-white rounded-2xl border border-border/50 p-4">
+        <div class="flex items-end justify-between mb-2">
+          <div>
+            <p class="text-[10px] font-semibold uppercase tracking-wider text-text-muted">Progress</p>
+            <p class="text-base font-extrabold text-text-primary mt-0.5"><span data-shop-checked>0</span> of <span data-shop-total>0</span> items</p>
+          </div>
+          <p class="text-[11px] text-text-muted">For 5 home days</p>
+        </div>
+        <!-- Progress bar -->
+        <div class="h-2 bg-bg rounded-full overflow-hidden">
+          <div data-shop-progress class="h-full bg-gradient-to-r from-success to-gold-400 rounded-full transition-all" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Category filter chips -->
+      <div class="px-4 mb-4 flex gap-2 overflow-x-auto hide-scrollbar">
+        <button data-shop-filter="all" class="flex-shrink-0 px-3 py-1.5 rounded-full text-[11px] font-bold bg-purple-500 text-white">All</button>
+        <button data-shop-filter="produce" class="flex-shrink-0 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-white text-text-muted border border-border">Produce</button>
+        <button data-shop-filter="protein" class="flex-shrink-0 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-white text-text-muted border border-border">Protein</button>
+        <button data-shop-filter="pantry" class="flex-shrink-0 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-white text-text-muted border border-border">Pantry</button>
+        <button data-shop-filter="dairy" class="flex-shrink-0 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-white text-text-muted border border-border">Dairy</button>
+      </div>
+
+      <!-- PRODUCE -->
+      <div data-shop-category="produce" class="mx-4 mb-4">
+        <h2 class="text-[11px] font-bold uppercase tracking-widest text-text-muted mb-2 flex items-center gap-1.5">
+          <i data-lucide="leaf" class="w-3.5 h-3.5 text-success"></i> Produce
+        </h2>
+        <div class="bg-white rounded-2xl border border-border/50 overflow-hidden">
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Blueberries</span>
+              <span class="block text-[10px] text-text-muted">240 g · 3 breakfasts</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Bananas</span>
+              <span class="block text-[10px] text-text-muted">5 medium</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Baby spinach</span>
+              <span class="block text-[10px] text-text-muted">300 g</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Cherry tomatoes</span>
+              <span class="block text-[10px] text-text-muted">400 g</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Cucumber</span>
+              <span class="block text-[10px] text-text-muted">2 medium</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Sweet potato</span>
+              <span class="block text-[10px] text-text-muted">1.5 kg</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Broccoli florets</span>
+              <span class="block text-[10px] text-text-muted">600 g</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Lemons</span>
+              <span class="block text-[10px] text-text-muted">3</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Garlic</span>
+              <span class="block text-[10px] text-text-muted">1 head</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PROTEIN -->
+      <div data-shop-category="protein" class="mx-4 mb-4">
+        <h2 class="text-[11px] font-bold uppercase tracking-widest text-text-muted mb-2 flex items-center gap-1.5">
+          <i data-lucide="beef" class="w-3.5 h-3.5 text-danger"></i> Protein
+        </h2>
+        <div class="bg-white rounded-2xl border border-border/50 overflow-hidden">
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Chicken breast</span>
+              <span class="block text-[10px] text-text-muted">900 g · 3 lunches</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Salmon fillets</span>
+              <span class="block text-[10px] text-text-muted">360 g · 2 dinners</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Lean beef mince</span>
+              <span class="block text-[10px] text-text-muted">200 g · Fri lunch</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Eggs, free-range</span>
+              <span class="block text-[10px] text-text-muted">12 pack</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- DAIRY -->
+      <div data-shop-category="dairy" class="mx-4 mb-4">
+        <h2 class="text-[11px] font-bold uppercase tracking-widest text-text-muted mb-2 flex items-center gap-1.5">
+          <i data-lucide="milk" class="w-3.5 h-3.5 text-blue-500"></i> Dairy
+        </h2>
+        <div class="bg-white rounded-2xl border border-border/50 overflow-hidden">
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Greek yogurt (0% fat)</span>
+              <span class="block text-[10px] text-text-muted">600 g · 3 breakfasts</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Parmesan, block</span>
+              <span class="block text-[10px] text-text-muted">100 g</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PANTRY -->
+      <div data-shop-category="pantry" class="mx-4 mb-4">
+        <h2 class="text-[11px] font-bold uppercase tracking-widest text-text-muted mb-2 flex items-center gap-1.5">
+          <i data-lucide="package" class="w-3.5 h-3.5 text-gold-500"></i> Pantry
+        </h2>
+        <div class="bg-white rounded-2xl border border-border/50 overflow-hidden">
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Quinoa</span>
+              <span class="block text-[10px] text-text-muted">500 g</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Rolled oats</span>
+              <span class="block text-[10px] text-text-muted">500 g</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Almonds, raw</span>
+              <span class="block text-[10px] text-text-muted">200 g</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Chia seeds</span>
+              <span class="block text-[10px] text-text-muted">100 g</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 border-b border-border/50 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Extra virgin olive oil</span>
+              <span class="block text-[10px] text-text-muted">500 ml</span>
+            </span>
+          </button>
+          <button data-shop-item class="w-full px-4 py-3 flex items-center gap-3 text-left">
+            <span class="w-5 h-5 rounded-md border-2 border-border bg-white flex items-center justify-center flex-shrink-0" data-shop-check>
+              <i data-lucide="check" class="w-3 h-3 text-white hidden" data-shop-check-icon></i>
+            </span>
+            <span class="flex-1">
+              <span class="block text-sm text-text-primary" data-shop-name>Honey, raw</span>
+              <span class="block text-[10px] text-text-muted">250 g jar</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <p class="text-center text-[11px] text-text-muted mt-3 mb-4 italic">
+        Tap any item to cross it off as you shop
+      </p>
+
+      <div class="h-4"></div>
+    </div>
+
+    <nav class="fixed bottom-0 left-0 right-0 max-w-[375px] mx-auto bg-white border-t border-border z-50">
+      <div class="flex justify-around items-center h-16 px-2">
+        <a href="dashboard.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="meals.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="utensils" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Energy In</span>
+        </a>
+        <a href="workout.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="dumbbell" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Energy Out</span>
+        </a>
+        <a href="coach.html" class="flex flex-col items-center gap-1 text-purple-500">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span class="text-[10px] font-semibold">Coach</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="user" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Profile</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    // ---- Shopping list interactivity ----
+    const items = document.querySelectorAll('[data-shop-item]');
+    const totalEl = document.querySelector('[data-shop-total]');
+    const checkedEl = document.querySelector('[data-shop-checked]');
+    const progressEl = document.querySelector('[data-shop-progress]');
+
+    const updateProgress = () => {
+      const checked = document.querySelectorAll('[data-shop-item].is-checked').length;
+      const total = items.length;
+      checkedEl.textContent = checked;
+      totalEl.textContent = total;
+      progressEl.style.width = total ? (checked / total * 100) + '%' : '0%';
+    };
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('is-checked');
+        const isChecked = item.classList.contains('is-checked');
+        const check = item.querySelector('[data-shop-check]');
+        const icon = item.querySelector('[data-shop-check-icon]');
+        const name = item.querySelector('[data-shop-name]');
+        if (isChecked) {
+          check.classList.remove('border-border', 'bg-white');
+          check.classList.add('border-success', 'bg-success');
+          icon.classList.remove('hidden');
+          name.classList.add('line-through', 'text-text-muted');
+        } else {
+          check.classList.add('border-border', 'bg-white');
+          check.classList.remove('border-success', 'bg-success');
+          icon.classList.add('hidden');
+          name.classList.remove('line-through', 'text-text-muted');
+        }
+        updateProgress();
+      });
+    });
+
+    updateProgress();
+
+    // ---- Category filter ----
+    document.querySelectorAll('[data-shop-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.shopFilter;
+        document.querySelectorAll('[data-shop-filter]').forEach(b => {
+          b.classList.remove('bg-purple-500', 'text-white', 'font-bold');
+          b.classList.add('bg-white', 'text-text-muted', 'font-semibold', 'border', 'border-border');
+        });
+        btn.classList.remove('bg-white', 'text-text-muted', 'font-semibold', 'border', 'border-border');
+        btn.classList.add('bg-purple-500', 'text-white', 'font-bold');
+
+        document.querySelectorAll('[data-shop-category]').forEach(cat => {
+          cat.classList.toggle('hidden', target !== 'all' && cat.dataset.shopCategory !== target);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

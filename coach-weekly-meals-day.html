@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jeanné — Monday Meals</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-gold-50: #FDF8F0; --color-gold-100: #F9EDDA; --color-gold-200: #F0D9B0; --color-gold-300: #E5C080;
+      --color-gold-400: #D4A053; --color-gold-500: #C48B38; --color-gold-600: #A8722B; --color-gold-700: #8A5C22;
+      --color-purple-50: #F5F2FC; --color-purple-100: #E8E0F7; --color-purple-200: #D1C0EF; --color-purple-300: #B59FE3;
+      --color-purple-400: #9B7FD4; --color-purple-500: #8266C4; --color-purple-600: #6A4FAD; --color-purple-700: #543D8C;
+      --color-blue-50: #F0F4FC; --color-blue-100: #DCE6F7; --color-blue-200: #B8CCEF; --color-blue-300: #8DADE3;
+      --color-blue-400: #5B8FD4; --color-blue-500: #4175C0; --color-blue-600: #335EA0; --color-blue-700: #284A80;
+      --color-bg: #F8F7F4; --color-surface: #FFFFFF; --color-border: #E8E5DF;
+      --color-text-primary: #1A1A1A; --color-text-secondary: #6B6B6B; --color-text-muted: #9B9B9B;
+      --color-success: #34D399; --color-warning: #FBBF24; --color-danger: #F87171;
+    }
+  </style>
+</head>
+<body class="bg-bg font-[Inter] antialiased">
+  <div class="max-w-[375px] mx-auto min-h-screen bg-bg relative">
+    <div class="page-content safe-bottom">
+
+      <div class="h-11"></div>
+
+      <!-- Header -->
+      <div class="flex items-center justify-between px-5 pb-3">
+        <a href="coach-weekly.html" class="w-10 h-10 flex items-center justify-center -ml-2">
+          <i data-lucide="arrow-left" class="w-5 h-5 text-text-primary"></i>
+        </a>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Monday · March 24</p>
+          <h1 class="text-base font-bold text-text-primary leading-tight">Meals</h1>
+        </div>
+        <div class="w-10"></div>
+      </div>
+
+      <!-- Context strip -->
+      <div class="mx-4 mb-4 px-3 py-2 bg-white rounded-xl border border-border/50 flex items-center justify-between">
+        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-text-secondary">
+          <i data-lucide="home" class="w-3.5 h-3.5"></i> Home day
+        </span>
+        <span class="text-xs font-bold text-gold-600">2,200 kcal · 180P / 200C / 73F</span>
+      </div>
+
+      <!-- BREAKFAST -->
+      <div class="mx-4 mb-3 bg-white rounded-2xl border border-border/50 p-4 shadow-sm">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" class="w-6 h-6 text-purple-500"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-0.5">
+              <span class="text-[10px] font-semibold uppercase tracking-wider text-text-muted">Breakfast</span>
+              <span class="text-[10px] text-text-muted">8:00 AM</span>
+            </div>
+            <h3 class="text-sm font-bold text-text-primary">Greek Yogurt Power Bowl</h3>
+            <div class="flex items-center gap-2 mt-1 text-[10px]">
+              <span class="font-bold text-gold-600">420 kcal</span>
+              <span class="text-text-muted">P 35 · C 42 · F 14</span>
+            </div>
+          </div>
+          <button class="w-8 h-8 rounded-lg bg-bg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-text-muted"></i>
+          </button>
+        </div>
+
+        <p class="text-[11px] font-semibold uppercase tracking-wider text-text-muted mb-2">Ingredients</p>
+        <ul class="space-y-1.5 mb-3">
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Greek yogurt (0% fat)</span>
+            <span class="text-text-muted font-medium">200 g</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Blueberries</span>
+            <span class="text-text-muted font-medium">80 g</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Banana</span>
+            <span class="text-text-muted font-medium">1 medium</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Almonds, raw</span>
+            <span class="text-text-muted font-medium">20 g</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Chia seeds</span>
+            <span class="text-text-muted font-medium">1 tsp</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Honey (optional)</span>
+            <span class="text-text-muted font-medium">1 tbsp</span>
+          </li>
+        </ul>
+        <p class="text-[11px] text-text-secondary leading-relaxed bg-bg rounded-lg p-2.5">
+          <span class="font-semibold text-text-primary">Prep · 5 min:</span> Layer yogurt, top with sliced banana, blueberries, almonds and chia. Drizzle honey.
+        </p>
+      </div>
+
+      <!-- LUNCH -->
+      <div class="mx-4 mb-3 bg-white rounded-2xl border border-border/50 p-4 shadow-sm">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-100 to-gold-200 flex items-center justify-center flex-shrink-0">
+            <i data-lucide="utensils" class="w-6 h-6 text-gold-500"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-0.5">
+              <span class="text-[10px] font-semibold uppercase tracking-wider text-text-muted">Lunch</span>
+              <span class="text-[10px] text-text-muted">12:30 PM</span>
+            </div>
+            <h3 class="text-sm font-bold text-text-primary">Grilled Chicken Quinoa Salad</h3>
+            <div class="flex items-center gap-2 mt-1 text-[10px]">
+              <span class="font-bold text-gold-600">550 kcal</span>
+              <span class="text-text-muted">P 45 · C 52 · F 16</span>
+            </div>
+          </div>
+          <button class="w-8 h-8 rounded-lg bg-bg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-text-muted"></i>
+          </button>
+        </div>
+
+        <p class="text-[11px] font-semibold uppercase tracking-wider text-text-muted mb-2">Ingredients</p>
+        <ul class="space-y-1.5 mb-3">
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Chicken breast</span>
+            <span class="text-text-muted font-medium">180 g</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Quinoa (dry)</span>
+            <span class="text-text-muted font-medium">80 g</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Baby spinach</span>
+            <span class="text-text-muted font-medium">60 g</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Cherry tomatoes</span>
+            <span class="text-text-muted font-medium">100 g</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Cucumber</span>
+            <span class="text-text-muted font-medium">1/2</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Olive oil</span>
+            <span class="text-text-muted font-medium">1 tbsp</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Lemon juice</span>
+            <span class="text-text-muted font-medium">1/2 lemon</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Sea salt &amp; pepper</span>
+            <span class="text-text-muted font-medium">to taste</span>
+          </li>
+        </ul>
+        <p class="text-[11px] text-text-secondary leading-relaxed bg-bg rounded-lg p-2.5">
+          <span class="font-semibold text-text-primary">Prep · 20 min:</span> Cook quinoa per pack. Grill chicken seasoned with salt &amp; pepper. Toss everything with olive oil &amp; lemon.
+        </p>
+      </div>
+
+      <!-- DINNER -->
+      <div class="mx-4 mb-3 bg-white rounded-2xl border border-border/50 p-4 shadow-sm">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center flex-shrink-0">
+            <i data-lucide="moon" class="w-6 h-6 text-blue-500"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-0.5">
+              <span class="text-[10px] font-semibold uppercase tracking-wider text-text-muted">Dinner</span>
+              <span class="text-[10px] text-text-muted">7:00 PM</span>
+            </div>
+            <h3 class="text-sm font-bold text-text-primary">Salmon w/ Sweet Potato &amp; Greens</h3>
+            <div class="flex items-center gap-2 mt-1 text-[10px]">
+              <span class="font-bold text-gold-600">620 kcal</span>
+              <span class="text-text-muted">P 42 · C 48 · F 22</span>
+            </div>
+          </div>
+          <button class="w-8 h-8 rounded-lg bg-bg flex items-center justify-center flex-shrink-0">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-text-muted"></i>
+          </button>
+        </div>
+
+        <p class="text-[11px] font-semibold uppercase tracking-wider text-text-muted mb-2">Ingredients</p>
+        <ul class="space-y-1.5 mb-3">
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Salmon fillet</span>
+            <span class="text-text-muted font-medium">180 g</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Sweet potato</span>
+            <span class="text-text-muted font-medium">250 g</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Broccoli florets</span>
+            <span class="text-text-muted font-medium">150 g</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Garlic clove</span>
+            <span class="text-text-muted font-medium">2</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Olive oil</span>
+            <span class="text-text-muted font-medium">1 tbsp</span>
+          </li>
+          <li class="flex items-center justify-between text-[12px]">
+            <span class="text-text-primary">Sea salt &amp; pepper</span>
+            <span class="text-text-muted font-medium">to taste</span>
+          </li>
+        </ul>
+        <p class="text-[11px] text-text-secondary leading-relaxed bg-bg rounded-lg p-2.5">
+          <span class="font-semibold text-text-primary">Prep · 25 min:</span> Roast sweet potato cubes at 200°C for 20 min. Steam broccoli. Pan-sear salmon skin-side down 4 min, flip 2 min.
+        </p>
+      </div>
+
+      <div class="h-4"></div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 max-w-[375px] mx-auto bg-white border-t border-border z-50">
+      <div class="flex justify-around items-center h-16 px-2">
+        <a href="dashboard.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a href="meals.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="utensils" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Energy In</span>
+        </a>
+        <a href="workout.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="dumbbell" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Energy Out</span>
+        </a>
+        <a href="coach.html" class="flex flex-col items-center gap-1 text-purple-500">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span class="text-[10px] font-semibold">Coach</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center gap-1 text-text-muted">
+          <i data-lucide="user" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium">Profile</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
