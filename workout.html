@@ -58,11 +58,26 @@
 
       <!-- Workout Header -->
       <div class="px-5 pb-4">
-        <h1 class="text-xl font-bold text-text-primary mb-3">Today's Workout</h1>
-        <div class="flex items-center gap-2 mb-3">
+        <div class="flex items-center gap-2 mb-3 flex-wrap">
+          <h1 class="text-xl font-bold text-text-primary">Today's Workout</h1>
+          <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-purple-50 text-purple-700 text-[10px] font-bold rounded-full uppercase tracking-wider">
+            <i data-lucide="sparkles" class="w-2.5 h-2.5"></i> Adapted
+          </span>
+        </div>
+        <div class="flex items-center gap-2 mb-3 flex-wrap">
           <span class="px-3 py-1.5 bg-purple-50 text-purple-600 text-xs font-bold rounded-lg">Upper Body Strength</span>
           <span class="px-3 py-1.5 bg-gold-50 text-gold-600 text-xs font-bold rounded-lg">55 min</span>
           <span class="px-3 py-1.5 bg-warning/10 text-warning text-xs font-bold rounded-lg">Moderate</span>
+        </div>
+        <!-- Adaptation banner -->
+        <div class="bg-purple-50 border-2 border-purple-200 rounded-xl px-3 py-2.5 mb-2">
+          <div class="flex items-start gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0"></i>
+            <div class="flex-1">
+              <p class="text-[12px] font-bold text-purple-700">Adapted by Jeanné · ~15% lower volume</p>
+              <p class="text-[11px] text-text-secondary leading-snug italic mt-0.5">Because last night's reflection said drained · HRV down 8 ms</p>
+            </div>
+          </div>
         </div>
         <!-- Recovery indicator -->
         <div class="flex items-center gap-2 bg-success/10 px-3 py-2 rounded-xl">
